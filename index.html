@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page | W01 Assignment, WDD 231</title>
+    <meta name="description" content="Designing and developing a course home page to review HTML, CSS, JS and best web developmemt practice.">
+    <meta name="author" content="Lillian Arp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/course.css">
+    <!-- <link rel="stylesheet" href=".css"> -->
+    <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="title-info">
+            <img src="images/lilieni.jpg" alt="Photo of Lillian Arp">
+            <h1>Lillian T. Arp</h1>
+        </div>
+
+        <!-- the hamburger goes here -->
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html" title="Home Page">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="https://github.com/lillianarp">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/lillianarp/">LinkedIn</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="grid-container">
+
+        <section class="card">
+            <h2>Course Work</h2>
+                <div class="content">
+                    <ul>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+        </section>
+
+        <section class="card">
+            <h2>Upolu, Samoa</h2>
+                <div class="content">
+                    <figure>
+                        <picture>
+                            <source srcset="images/upolu-samoa_600x450.webp" media="(min-width: 768px)">
+                            <img src="images/upolu-samoa_400x300.webp" alt="A beach in Upolu, Samoa">
+                        </picture>
+                        <figcaption>A beach in Upolu, Samoa</figcaption>
+                    </figure>
+                </div>
+        </section>
+        
+        <section class="card">
+            <h2>Web and Computer Programming Certificate</h2>
+            <!-- number of Credits, large screen -->
+            <div id="credit-number">Credits: </div>
+                <div class="course-content"> 
+                    <!-- need a grid here, 1fr 1fr 1fr -->
+                    <div class="filter-buttons">
+                        <button data-subject="All">All Courses</button>
+                        <button data-subject="CSE">CSE Courses</button>
+                        <button data-subject="WDD">WDD Courses</button>
+                    </div>
+
+                    <div id="course-buttons">
+                        <!-- These are coming from the JS array -->
+                    </div>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright © <span id="currentyear"></span> 🌴 Lillian Arp 🌴 | Upolu, Samoa </p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+</html>

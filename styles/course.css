@@ -150,7 +150,9 @@ nav ul li.active {
 
 .card .content img {
     border-radius: 6px;
-    width: 95%;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
 }
 
 #grid-container .card:nth-of-type(3) {

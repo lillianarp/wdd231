@@ -132,8 +132,8 @@ nav ul li.active {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    /* outline: 1px dashed red; */
     margin-bottom: 1rem;
+    aspect-ratio: 4 / 3;
 }
 
 .card h2 {

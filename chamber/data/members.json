@@ -1,58 +1,60 @@
-[
-    {
-        "name": "LEGOLAND California Resort",
-        "address": "One LEGOLAND Dr., Carlsbad, CA 92008",
-        "phone": "(760) 918-5300",
-        "url": "https://www.legoland.com/california",
-        "image": "images/legoland_logo.jpg",
-        "level": 1
-    },
-    {
-        "name": "Black Rail Kitchen + Bar",
-        "address": "6981 El Camino Real, Ste. 103, Carlsbad, CA 92009",
-        "phone": "(760) 931-0020",
-        "url": "https://www.blackrailkitchen.com",
-        "image": "images/blackrail_logo.jpg",
-        "level": 1
-    },
-    {
-        "name": "Blue Water Film Festival",
-        "address": "12774 Torrey Bluff Dr., Del Mar, CA 92130",
-        "phone": "(310) 985-2583",
-        "url": "https://bluewaterfilmfestival.org",
-        "image": "images/bluewater_logo.jpg",
-        "level": 2
-    },
-    {
-        "name": "Phillips + Co. Real Estate",
-        "address": "7020 Avenida Encinas, Carlsbad, CA 92011",
-        "phone": "(760) 402-5321",
-        "url": "https://www.phillipsandco-re.com/",
-        "image": "images/philips_logo.jpg",
-        "level": 2
-    },
-    {
-        "name": "Tinleaf Fresh Kitchen",
-        "address": "6985 El Camino Real, Ste.108, Carlsbad, CA 92009",
-        "phone": "(760) 431-5323",
-        "url": "https://www.tinleafkitchen.com",
-        "image": "images/tinleaf_logo.jpg",
-        "level": 1
-    },
-    {
-        "name": "Cake4Kids",
-        "address": "2508 Historic Decatur Rd., Ste. 200, San Diego, CA 92106",
-        "phone": "619-786-8191",
-        "url": "https://cake4kids.org",
-        "image": "images/cake4kids_logo.png",
-        "level": 3
-    },
-    {
-        "name": "Nathan Shier - The Brand Realty",
-        "address": "6352 Corte Del Abeto, Ste. I, Carlsbad, CA 92011",
-        "phone": "(858) 248-2199",
-        "url": "https://heyserri.com/agent/nathan-shier",
-        "image": "images/thebrand_logo.png",
-        "level": 2
-    }
-]
+{
+    "members": [
+        {
+            "name": "LEGOLAND California Resort",
+            "address": "One LEGOLAND Dr., Carlsbad, CA 92008",
+            "phone": "(760) 918-5300",
+            "url": "https://www.legoland.com/california",
+            "image": "images/legoland_logo.jpg",
+            "level": 1
+        },
+        {
+            "name": "Black Rail Kitchen + Bar",
+            "address": "6981 El Camino Real, Ste. 103, Carlsbad, CA 92009",
+            "phone": "(760) 931-0020",
+            "url": "https://www.blackrailkitchen.com",
+            "image": "images/blackrail_logo.jpg",
+            "level": 1
+        },
+        {
+            "name": "Blue Water Film Festival",
+            "address": "12774 Torrey Bluff Dr., Del Mar, CA 92130",
+            "phone": "(310) 985-2583",
+            "url": "https://bluewaterfilmfestival.org",
+            "image": "images/bluewater_logo.jpg",
+            "level": 2
+        },
+        {
+            "name": "Phillips + Co. Real Estate",
+            "address": "7020 Avenida Encinas, Carlsbad, CA 92011",
+            "phone": "(760) 402-5321",
+            "url": "https://www.phillipsandco-re.com/",
+            "image": "images/philips_logo.jpg",
+            "level": 2
+        },
+        {
+            "name": "Tinleaf Fresh Kitchen",
+            "address": "6985 El Camino Real, Ste.108, Carlsbad, CA 92009",
+            "phone": "(760) 431-5323",
+            "url": "https://www.tinleafkitchen.com",
+            "image": "images/tinleaf_logo.jpg",
+            "level": 1
+        },
+        {
+            "name": "Cake4Kids",
+            "address": "2508 Historic Decatur Rd., Ste. 200, San Diego, CA 92106",
+            "phone": "619-786-8191",
+            "url": "https://cake4kids.org",
+            "image": "images/cake4kids_logo.png",
+            "level": 3
+        },
+        {
+            "name": "Nathan Shier - The Brand Realty",
+            "address": "6352 Corte Del Abeto, Ste. I, Carlsbad, CA 92011",
+            "phone": "(858) 248-2199",
+            "url": "https://heyserri.com/agent/nathan-shier",
+            "image": "images/thebrand_logo.png",
+            "level": 2
+        }
+    ]
+} 

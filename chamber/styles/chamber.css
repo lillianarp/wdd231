@@ -26,51 +26,53 @@ nav {
 main {
     margin: 0 auto;
     width: 95%;
-    outline: 1px dotted red;
+    /* outline: 1px dotted red; */
 }
 
-/* #hero,
-#panel, */
-#member-cards {
+#businesses {
     background-color: #eee;
     margin-bottom: 1rem;
-}
-
-#member-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 1.5rem;
 }
 
-.card {
+#cards-container {
+    /* outline: 1px dotted green; */
+    grid-template-columns: 1fr; 
+}
+
+.member-card {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    padding: 16px;
+    padding: 1rem 2rem;
     text-align: center;
+    /* outline: 1px dotted red; */
+    margin-bottom: 1rem;
 }
 
-.card img {
+.member-card img {
     width: 100px;
     height: auto;
-    margin-bottom: 10px;
+    margin: 1rem auto;
 }
 
-.card h3 {
+.member-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
 }
 
-.card p {
+.member-card p {
     font-size: 0.9rem;
     margin: 4px 0;
 }
 
-.card a {
+.member-card a {
     color: #0077cc;
     text-decoration: none;
 }
+
 
 footer {
     display: flex;
@@ -88,7 +90,7 @@ footer {
 }
 
 
-/* Let's put all the styles for larger screens here */
+/* Styles for larger screens here */
 
 @media (min-width: 768px) {
 
@@ -98,6 +100,13 @@ footer {
 
     .hamburger {
         display: none;
+    }
+
+    #cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* outline: 1px dotted green; */
+        gap: 1rem;
     }
 
     footer {

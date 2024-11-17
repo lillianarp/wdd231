@@ -5,36 +5,56 @@ document.getElementById("currentyear").textContent = currentYear;
 const lastModified = document.lastModified;
 document.getElementById("lastModified").textContent = lastModified;
 
+
 // Business members data (JSON)
-
 document.addEventListener('DOMContentLoaded', () => {
+    const url = 'data/members.json';
     const memberCards = document.getElementById('member-cards');
+    
+    async function getMemberData() {
+            const response = await fetch(url);
+            const data = await response.json();
+            // console.table(data.members);
+            displayMembers(data.members);
+        }   
 
-    fetch('data/members.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            data.forEach(member => {
-                const card = document.createElement('div')
-                card.classList.add('card');
+    getMemberData();
 
-                card.innerHTML = `
-                    <img src="${member.image}" alt="${member.name} Logo">
-                    <h3>${member.name}</h3>
-                    <p>${member.address}</p>
-                    <p>${member.phone}</p>
-                    <a href="${member.url}" target="_blank">Website</a>
-                    <p>Membership Level: ${member.level}</p>
-                `;
+    const displayMembers = (members) => {
+        const cardsContainer = document.getElementById('cards-container');
+        cardsContainer.innerHTML = '';
 
-                memberCards.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching members:', error);
+        members.forEach((member) => {
+            let card = document.createElement('div');
+            card.classList.add('member-card');
+            let businessName = document.createElement('h3');
+            let address = document.createElement('p');
+            let phone = document.createElement('p');
+            let url = document.createElement('a');
+            let image = document.createElement('img');
+
+            
+            image.setAttribute('src', member.image);
+            image.setAttribute('alt', `Logo of ${member.name}`);
+            image.setAttribute('loading', 'lazy');
+            businessName.textContent = member.name;
+            address.textContent = `Address: ${member.address}`;
+            phone.textContent = `Phone: ${member.phone}`;
+            url.setAttribute('href', member.url); 
+            url.textContent = "Visit Website"; 
+            url.setAttribute('target', '_blank'); 
+
+            card.appendChild(image);
+            card.appendChild(businessName);
+            card.appendChild(address);
+            card.appendChild(phone);
+            card.appendChild(url);
+            
+            cardsContainer.appendChild(card);
+
         });
-    });
+    }
+
+    getMemberData();
+
+});

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+header,
+footer {
+    background-color: #ddd;
+    padding: 1rem;
+}
+
+nav {
+    display: none;
+}
+
+.hamburger {
+    display: block;
+}
+
+main {
+    margin: 0 auto;
+    width: 95%;
+    outline: 1px dotted red;
+}
+
+/* #hero,
+#panel, */
+#member-cards {
+    background-color: #eee;
+    margin-bottom: 1rem;
+}
+
+#member-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.card a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.chamber-address,
+.social-icons,
+.project-notes {
+    outline: 1px dotted red;
+    padding: 1rem;
+    width: 100%;
+}
+
+
+/* Let's put all the styles for larger screens here */
+
+@media (min-width: 768px) {
+
+    nav {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}

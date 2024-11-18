@@ -52,7 +52,8 @@ header {
 .menu-controls .half-circle-resp {
     /* outline: 2px dotted red; */
     margin-right: 2rem;
-    max-height: 50px;
+    height: 50px;
+    width: 50px;
 }
 
 #hamburger {
@@ -304,8 +305,10 @@ footer {
 
    .half-circle {
         display: inline-block;
-        max-width: 1.5rem;
+        /* max-width: 1.5rem; */
         align-self: center;
+        height: 30px;
+        width: 30px;
     }
 
     #hamburger {

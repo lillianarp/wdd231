@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let address = document.createElement('p');
                 let phone = document.createElement('p');
                 let url = document.createElement('a');
-                let image = document.createElement('img');
                 let level = document.createElement('p');
                     let membershipLevel;
                         if (member.level === 1) {
@@ -45,9 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else {
                             membershipLevel = "Unknown"; 
                         }
+                let image = document.createElement('img');
                 image.setAttribute('src', member.image);
                 image.setAttribute('alt', `Logo of ${member.name}`);
                 image.setAttribute('loading', 'lazy');
+                image.setAttribute('width', '100');
+                image.setAttribute('height', '100');
                 businessName.textContent = member.name;
                 address.textContent = `Address: ${member.address}`;
                 phone.textContent = `Phone: ${member.phone}`;
@@ -111,4 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
     getMemberData();
 
 });
+
+// toggle the hamburger
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+})
 

@@ -11,7 +11,7 @@
 
     <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Timbuktu Chamber of Commerce: Business Directory">
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="article">
     <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
     <meta property="og:url" content="http://euro-travel-example.com/index.htm">
     <meta name="twitter:card" content="summary_large_image">
@@ -20,16 +20,18 @@
     <meta property="og:site_name" content="European Travel, Inc.">
     <meta name="twitter:image:alt" content="Alt text for image">
 
-    <meta property="fb:app_id" content="your_app_id" />
+    <meta property="fb:app_id" content="your_app_id">
     <meta name="twitter:site" content="@website-username">
 
     <!-- Fonts, Styles and Scripts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
+
     <script src="scripts/chamber.js" defer></script>
 </head>
 
@@ -37,38 +39,44 @@
     <header>
         
         <div class="site-info">
-            <img src="#" alt="Chamber Logo">
-            <h1>Timbuktu</h1>
-            <p>Chamber of Commerce</p>
+            <img src="images/picture.png" alt="Chamber Logo">
+            <div class="site-title">
+                <h1>Timbuktu</h1>
+                <p>Chamber of Commerce</p>
+            </div>
         </div>
+
+            <div class="menu-controls">
+                <a href="#"><img class="half-circle-resp" src="images/half-circle_80x80.png" alt="Half-circle"></a>
+                <!-- Our hamburger goes here somewhere -->
+                <button id="hamburger">
+                    ☰</button>
+            </div>
+
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Directory</li>
-                <li>Join</li>
-                <li>Discover</li>
-                <li>?</li>
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="#">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
             </ul>
         </nav>
-        <!-- Our hamburger goes here somewhere -->
-        <div class="hamburger" id="hamburger">
-            ☰
-        </div>
 
     </header>
 
     <main>
-
-        <section id="businesses"> 
+        <h1>Directory</h1>
+        <div id="businesses"> 
             <div id="toggle-buttons">
                 <button id="toggle-grid">GRID</button>
                 <button id="toggle-list">LIST</button>
             </div>
             
              <div id="cards-container">
-                <!-- member cards go here -->
+                <!-- member cards go here, dynamically -->
              </div>
-        </section>
+        </div>
 
     </main>
 
@@ -83,7 +91,9 @@
         </div>
 
         <div class="social-icons">
-            Our social media buttons go here
+            <a href="#"><img src="images/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="images/youtube.png" alt="youtube"></a>
+            <a href="#"><img src="images/instagram.png" alt="instagram"></a>
         </div>
 
         <div class="project-notes">

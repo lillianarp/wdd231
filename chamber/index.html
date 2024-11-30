@@ -37,8 +37,8 @@
 </head>
 
 <body>
+    
     <header>
-        
         <div class="site-info">
             <img src="images/picture.png" alt="Chamber Logo">
             <div class="site-title">
@@ -56,37 +56,108 @@
 
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="directory.html">Directory</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="#">Join</a></li>
                 <li><a href="#">Discover</a></li>
                 <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
             </ul>
         </nav>
-
     </header>
-    
-    <div class="pagetitle">
-        <h1>Directory</h1>
-    </div>
-    
+    <section id="hero">
+        <picture>
+            <source srcset="images/shopkeeper_1000x666.webp" alt="Shopkeeper in a Market Stall" media="(min-width: 768px)">
+            <img src="images/shopkeeper_600x400.webp" alt="Shopkeeper in a Market Stall">
+        </picture> 
+        <div class="pagetitle">
+            <h1>Home</h1>
+        </div>  
+    </section>
+
     <main>
         
-        <div id="businesses"> 
-            <div id="toggle-buttons">
-                <button id="toggle-grid">GRID</button>
-                <button id="toggle-list">LIST</button>
+        
+        <div class="events-block">
+            <div class="ecard events">
+                <h4>Events</h4>
+                <div class="event-content">
+                    Here's the first block - events, 2fr
+                </div>
             </div>
-            
-             <div id="cards-container">
-                <!-- member cards go here, dynamically -->
-             </div>
+            <div class="ecard">
+                <h4>Current Weather</h4>
+                <div class="event-content">
+                    This is the weather box - current weather
+                </div>
+            </div>
+            <div class="ecard">
+                <h4>Weather Forecast</h4>
+                <div class="event-content">
+                    This is the weather forecast 
+                </div>
+            </div>
         </div>
 
+        <div class="highlighted-cards">
+            <div class="hcard">
+                <div class="hcard-title">
+                    <h4>LEGOLAND California Resort</h4>
+                    <p class="tagline">Business Tag Line</p>
+                </div> 
+
+                <div class="hcard-content">
+                    <div>
+                        <img src="images/legoland_logo.jpg" alt="Logo for LEGOLAND California Resort"> 
+                    </div>
+                    <div>
+                        <p><strong>EMAIL:</strong> visit@legoland.com</p>
+                        <p><strong>PHONE:</strong> (760) 431-5323</p>
+                        <p><strong>URL:</strong> legoland.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hcard">
+                <div class="hcard-title">
+                    <h4>Tinleaf Fresh Kitchen </h4>
+                    <p class="tagline">Business Tag line</p>
+                </div>
+
+                <div class="hcard-content">
+                    <div>
+                        <img src="images/tinleafk_logo.jpg" alt="Logo for Tinleaf Fresh Kitchen"> 
+                    </div>
+                    <div>
+                        <p><strong>EMAIL:</strong> contact@tinleafkitchen.com</p>
+                        <p><strong>PHONE:</strong> (760) 431-5323</p>
+                        <p><strong>URL:</strong> tinleafkitchen.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hcard">
+                <div class="hcard-title">
+                    <h4>Blue Water Film Festival</h4>
+                    <p class="tagline">Business Tag line</p>
+                </div>
+                
+                <div class="hcard-content">
+                    <div>
+                        <img src="images/bluewater_logo.jpg" alt="Logo for Blue Water Film Festival"> 
+                    </div>
+                    <div>
+                        <p><strong>EMAIL:</strong> info@bluewaterfilm.com</p>
+                        <p><strong>PHONE:</strong> (310) 985-2583</p>
+                        <p><strong>URL:</strong> bluewaterfilmfestival.org</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <footer>
-
         <div class="chamber-address">
             Timbuktu Chamber of Commerce<br>
             10 Rue De La Paix<br>
@@ -107,8 +178,5 @@
             © <span id="currentyear"></span> Timbuktu Chamber of Commerce <br>
             <span id="lastModified"></span>
         </div>
-
     </footer>
-
 </body>
-</html>

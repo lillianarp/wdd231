@@ -112,11 +112,14 @@ nav ul li a {
     color: #000;
 }
 
-main {
+main,
+.pagetitle {
     margin: 2rem auto;
     width: 95%;
     /* outline: 1px dotted red; */
 }
+
+/* Directory Styles */
 
 #businesses {
     background-color: #eee;
@@ -200,6 +203,90 @@ main {
     margin-top: 0.5rem;
 }
 
+/* Index Styles */
+
+#hero img {
+    width: 100%;
+    opacity: 0.9;
+}
+
+.pagetitle {
+    background-color: transparent;
+}
+
+.events-block {
+    display: grid;
+    border-radius: 4px;
+    gap: 1rem;
+    /* outline: 1px dotted blue; */
+    grid-template-columns: 1fr;
+}
+
+.ecard {
+    /* outline: 1px dotted red; */
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.events-block h4 {
+    background-color: #474747;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius: 4px 4px 0 0;
+}
+
+.event-content {
+    padding: 1rem;
+}
+
+/* The Highlighted Businesses */
+
+.highlighted-cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0;
+    /* outline: 1px dotted red; */
+}
+
+.hcard {
+    background-color: #eee;
+    /* padding: 1rem; */
+    border-radius: 6px;
+}
+
+.hcard .hcard-title {
+    border-bottom: 1px solid #afafaf;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.hcard-title h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.hcard-title .tagline {
+    font-size: 0.9rem;
+}
+
+.hcard-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+}
+
+.hcard-content img {
+    max-width: 80px;
+    margin-right: 1rem;
+}
+
+/* Footer Styles */
+
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -250,7 +337,7 @@ footer {
     }
 
     .site-title {
-        line-height: 1rem;
+        line-height: 1.3rem;
         width: 100%;
         font-size: 1.2rem;
         padding-bottom: 0.3rem;
@@ -319,6 +406,20 @@ footer {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
+    }
+
+    /* Index Styles */
+
+    .events-block {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .events {
+        grid-column: span 2;
+    }
+
+    .highlighted-cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     footer {

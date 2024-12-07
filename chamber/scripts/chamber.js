@@ -1,4 +1,13 @@
 
+// SITE NAV: toggle the hamburger
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+})
+
+// FOOTER: Year & Last Modified Date
 const currentYear = new Date().getFullYear();
 document.getElementById("currentyear").textContent = currentYear;
 
@@ -6,22 +15,32 @@ const lastModified = document.lastModified;
 document.getElementById("lastModified").textContent = lastModified;
 
 
-// Business members data (JSON)
+// LOAD Business members data (from JSON file)
 document.addEventListener('DOMContentLoaded', () => {
     const url = 'data/members.json';
     const cardsContainer = document.getElementById('cards-container');
     const gridButton = document.getElementById('toggle-grid'); 
     const listButton = document.getElementById('toggle-list');
+    const spotlightContainer = document.querySelector('.spotlight-cards');
     let membersData = [];
     
     async function getMemberData() {
             const response = await fetch(url);
             const data = await response.json();
-            // console.table(data.members);
             membersData = data.members;
-            displayMembers(membersData, 'grid');
+
+            // to display members in directory.html
+            if (cardsContainer) {
+                displayMembers(membersData, 'grid');
+            }
+            
+            // to display business cards in index.html
+            if (spotlightContainer) {
+                displaySpotlightMembers(membersData);
+            }
         }   
 
+    // instructions for directory.html member card grid    
     const displayMembers = (members, layout = 'grid') => {
         cardsContainer.innerHTML = '';
 
@@ -67,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.appendChild(level);
                 
                 cardsContainer.appendChild(card);
-                
 
             } else if (layout === 'list') {
                 let listItem = document.createElement('div');
@@ -92,33 +110,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 cardsContainer.appendChild(listItem);
             } 
-            
         });
     };
 
-    // toggle the views
-    gridButton.addEventListener('click', () => {
-        cardsContainer.classList.remove('toggle-list');
-        cardsContainer.classList.add('toggle-grid');
-        displayMembers(membersData, 'grid'); 
+    // instructions for index.html spotlight cards grid  
+    const displaySpotlightMembers = (members) => {
+        spotlightContainer.innterHTML = ''; // clear the space 
 
-    });
+        // filter for gold and silver level members
+        const filteredMembers = members.filter(member => member.level === 1 || member.level === 2);
 
-    listButton.addEventListener('click', () => {
-        cardsContainer.classList.remove('toggle-grid');
-        cardsContainer.classList.add('toggle-list');
-        displayMembers(membersData, 'list');
-    });
+        // randomly select 2 or 3 members 
+        const randomMembers = getRandomSubset(filteredMembers, 3); 
+
+        // populate spotlight cards
+        randomMembers.forEach(member => {
+            const card = document.createElement('div');
+            card.classList.add('scard');
+
+            card.innerHTML = `
+                <div class="scard-title">
+                    <h4>${member.name}</h4>
+                    <p class="tagline">Business Tag Line</p>
+                </div> 
+                <div class="scard-content">
+                    <div>
+                        <img src="${member.image}" alt="Logo for ${member.name}" loading="lazy" width="100" height="100"> 
+                    </div>
+                    <div>
+                        <p><strong>ADDRESS:</strong> ${member.address}</p>
+                        <p><strong>PHONE:</strong> ${member.phone}</p>
+                        <p><strong>URL:</strong> <a href="${member.url}" target="_blank">${member.url}</a></p>
+                    </div>
+                </div>
+            `;
+
+            spotlightContainer.appendChild(card);
+        });
+    };
+
+    // helper function to get a random subset
+    function getRandomSubset(array, num) {
+        const shuffled = array.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
+    }
+
+
+    // toggle the grid/list views in directory.html
+    if (gridButton && listButton) {
+        gridButton.addEventListener('click', () => {
+            cardsContainer.classList.remove('toggle-list');
+            cardsContainer.classList.add('toggle-grid');
+            displayMembers(membersData, 'grid'); 
+
+        });
+
+        listButton.addEventListener('click', () => {
+            cardsContainer.classList.remove('toggle-grid');
+            cardsContainer.classList.add('toggle-list');
+            displayMembers(membersData, 'list');
+        });
+    }
 
     getMemberData();
 
 });
 
-// toggle the hamburger
-const hamburger = document.getElementById('hamburger');
-const nav = document.querySelector('nav');
-
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-})
 

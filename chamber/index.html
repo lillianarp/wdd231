@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Directory for the Timbuktu Chamber of Commerce</title>
+    <title>Welcome to the Timbuktu Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Business Directory for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
+    <meta name="description" content="Home page for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
     <meta name="author" content="Lillian Arp">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Timbuktu Chamber of Commerce: Business Directory">
+    <meta property="og:title" content="Timbuktu Chamber of Commerce: Home Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/city_600x400.jpg">
-    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/index.html">
     <meta name="twitter:card" content="summary_large_image">
-
-    <meta property="og:description" content="Timbuktu Chamber of Commerce: Business Directory">
+    <meta property="og:description" content="Timbuktu Chamber of Commerce: Home Page">
     <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
     <meta name="twitter:image:alt" content="The Timbuktu Chamber of Commerce">
-
     <meta property="fb:app_id" content="your_app_id">
     <meta name="twitter:site" content="@website-username">
 
     <!-- Fonts, Styles and Scripts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
-
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
-
     <script src="scripts/chamber.js" defer></script>
 </head>
 
@@ -84,15 +79,25 @@
                     Here's the first block - events, 2fr
                 </div>
             </div>
+
             <div class="ecard">
                 <h4>Current Weather</h4>
-                <div class="event-content">
-                    This is the weather box - current weather
+                <div class="current-weather">
+                    <div class="ecard-left"><img id="weather-icon" src="" alt="Weather icon"></div>
+                    <div class="ecard-right"><p id="current-temp"></p>
+                        <p id="weather-desc"></p>
+                        <p id="max-temp"></p>
+                        <p id="min-temp"></p>
+                        <p id="humidity"></p>
+                        <p id="sunrise-time"></p>
+                        <p id="sunset-time"></p>
+                    </div>
                 </div>
             </div>
+
             <div class="ecard">
                 <h4>Weather Forecast</h4>
-                <div class="event-content">
+                <div class="weather-forecast">
                     This is the weather forecast 
                 </div>
             </div>

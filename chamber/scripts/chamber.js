@@ -7,12 +7,83 @@ hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
 })
 
-// FOOTER: Year & Last Modified Date
-const currentYear = new Date().getFullYear();
-document.getElementById("currentyear").textContent = currentYear;
+// Call weather info from Open Weather API
 
-const lastModified = document.lastModified;
-document.getElementById("lastModified").textContent = lastModified;
+// We want the temperature - temperature.value &degF
+// Or we could do - temperature.unit (and set 'metric' in the url)
+// Partly Cloudy - clouds.value cloudiness
+// High degree - temperature.max
+// Low degree - temperature.min
+// Humidity - humidity.value humidity.unit %
+// Sunrise time - city.sun.rise 
+// Sunset time - city.sun.set
+// And we need this all at the coordinates for Timbuktu - 16.76669822228727, -3.003859808910824
+
+// select HTML elements in the DOM
+const weatherIcon = document.getElementById('weather-icon');
+const currentTemp = document.getElementById('current-temp');
+const weatherDesc = document.getElementById('weather-desc');
+const maxTemp = document.getElementById('max-temp');
+const minTemp = document.getElementById('min-temp');
+const humidity = document.getElementById('humidity');
+const sunRise = document.getElementById('sunrise-time');
+const sunSet = document.getElementById('sunset-time');
+
+// required variables
+const myAppId = "9097c8722945438bff5d4b9377c57a6c"
+const timbuktuLat = "16.76"
+const timbuktuLong = "3.00"
+
+const weatherURL = `//api.openweathermap.org/data/2.5/weather?lat=${timbuktuLat}&lon=${timbuktuLong}&appid=${myAppId}&units=metric`
+
+// time to fetch the current weather 
+async function apiFetch() {
+    try {
+      const response = await fetch(weatherURL);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data); // testing only
+        displayResults(data); 
+      } else {
+          throw Error(await response.text());
+      }
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  
+
+// display all this on index.html
+function displayResults(data) {
+    console.log('hello!')
+    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    weatherIcon.setAttribute('SRC', iconsrc)
+    weatherIcon.setAttribute('alt', data.weather[0].description)
+    currentTemp.innerHTML = `${data.main.temp}&deg;C`
+    
+    // deal with the lower case description
+    function toTitleCase(str) {
+        return str
+            .split(' ') 
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' '); 
+    }
+    const titleCaseDescription = toTitleCase(data.weather[0].description);
+    weatherDesc.innerHTML = titleCaseDescription
+    maxTemp.innerHTML = `High: ${data.main.temp_max}&deg;` 
+    minTemp.innerHTML = `Low: ${data.main.temp_min}&deg;` 
+    minTemp.innerHTML = `Humidity: ${data.main.humidity}%`
+
+    // deal with the timestamp conversion
+    const sunriseTime = new Date(data.sys.sunrise * 1000);
+    const sunsetTime = new Date(data.sys.sunset * 1000);
+    const sunriseFormatted = sunriseTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    const sunsetFormatted = sunsetTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    sunRise.innerHTML = `Sunrise: ${sunriseFormatted}` 
+    sunSet.innerHTML = `Sunrise: ${sunsetFormatted}` 
+}
+
+apiFetch();
 
 
 // LOAD Business members data (from JSON file)
@@ -176,4 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// FOOTER: Year & Last Modified Date
+const currentYear = new Date().getFullYear();
+document.getElementById("currentyear").textContent = currentYear;
 
+const lastModified = document.lastModified;
+document.getElementById("lastModified").textContent = lastModified;

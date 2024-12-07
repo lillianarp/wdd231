@@ -239,8 +239,27 @@ main,
     border-radius: 4px 4px 0 0;
 }
 
-.event-content {
+.event-content,
+.current-weather,
+.weather-forecast {
     padding: 1rem;
+}
+
+.current-weather {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    outline: 1px dotted green;
+}
+
+#current-temp {
+    font-weight: 600;
+}
+
+#weather-icon {
+    width: 60px;
+    height: auto;
+    margin-right: 0.5rem;
 }
 
 /* The Spotlighted Businesses */
@@ -332,6 +351,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    outline: 1px dotted red;
 }
 
 .social-icons img {

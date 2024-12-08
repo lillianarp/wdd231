@@ -206,6 +206,7 @@ main,
 /* Index Styles */
 
 #hero img {
+    width: 100%;
     display: block;
     height: auto;
     opacity: 0.9;

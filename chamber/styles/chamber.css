@@ -249,7 +249,7 @@ main,
     display: flex;
     justify-content: space-around;
     width: 100%;
-    outline: 1px dotted green;
+    /* outline: 1px dotted green; */
 }
 
 #current-temp {
@@ -259,7 +259,20 @@ main,
 #weather-icon {
     width: 60px;
     height: auto;
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
+    background-color: #9e9d9d;
+    border-radius: 50%;
+    padding: 5px;
+    display: inline-block;
+}
+
+#weather-icon[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgEB/hd3E/cAAAAASUVORK5CYII="] {
+    visibility: hidden;
+}
+
+.weather-forecast {
+    font-size: 1.2rem;
+    line-height: 2rem;
 }
 
 /* The Spotlighted Businesses */
@@ -318,14 +331,24 @@ main,
     background-color: #474747;
     margin: 2rem auto;
     cursor: pointer;
+    text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
     color: #fff;
-    text-decoration: none;
+}
+
+.home-cta:link, 
+.home-cta:visited {
+    color: #fff; 
 }
 
 .home-cta:hover {
     background-color: #805b19;
+    color: #fff;
+}
+
+.home-cta:active {
+    color: #fff; 
 }
 
 /* Footer Styles */
@@ -341,17 +364,18 @@ footer {
 .social-icons,
 .project-notes {
     padding: 1rem;
-    flex: 1;
-    min-width: 200px;
-    min-height: 200px;
+    flex: 3;
+    /* outline: 1px dotted blue; */
 }
 
 .social-icons {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    outline: 1px dotted red;
+    margin-right: 2rem;
+    /* outline: 1px dotted red; */
 }
 
 .social-icons img {
@@ -378,6 +402,14 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .site-info a {
+        display: flex;
+        align-items: center;
+        margin-right: 1.5rem;
+        text-decoration: none;
+        /* outline: 1px dotted red; */
     }
 
     .site-title {

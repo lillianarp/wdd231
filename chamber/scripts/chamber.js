@@ -7,17 +7,7 @@ hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
 })
 
-// Call weather info from Open Weather API
-
-// We want the temperature - temperature.value &degF
-// Or we could do - temperature.unit (and set 'metric' in the url)
-// Partly Cloudy - clouds.value cloudiness
-// High degree - temperature.max
-// Low degree - temperature.min
-// Humidity - humidity.value humidity.unit %
-// Sunrise time - city.sun.rise 
-// Sunset time - city.sun.set
-// And we need this all at the coordinates for Timbuktu - 16.76669822228727, -3.003859808910824
+// **** CURRENT WEATHER with Open Weather API ****
 
 // select HTML elements in the DOM
 const weatherIcon = document.getElementById('weather-icon');
@@ -32,7 +22,7 @@ const sunSet = document.getElementById('sunset-time');
 // required variables
 const myAppId = "9097c8722945438bff5d4b9377c57a6c"
 const timbuktuLat = "16.76"
-const timbuktuLong = "3.00"
+const timbuktuLong = "-3.00"
 
 const weatherURL = `//api.openweathermap.org/data/2.5/weather?lat=${timbuktuLat}&lon=${timbuktuLong}&appid=${myAppId}&units=metric`
 
@@ -51,16 +41,15 @@ async function apiFetch() {
         console.log(error);
     }
   }
-  
 
 // display all this on index.html
 function displayResults(data) {
-    console.log('hello!')
-    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-    weatherIcon.setAttribute('SRC', iconsrc)
+    // console.log('hello!')
+    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    weatherIcon.setAttribute('src', iconsrc)
     weatherIcon.setAttribute('alt', data.weather[0].description)
     currentTemp.innerHTML = `${data.main.temp}&deg;C`
-    
+
     // deal with the lower case description
     function toTitleCase(str) {
         return str
@@ -85,6 +74,59 @@ function displayResults(data) {
 
 apiFetch();
 
+
+// **** WEATHER FORECAST with Open Weather API ****
+
+const forecastContainer = document.getElementById('3day-forecast');
+const forecastUrl = `//api.openweathermap.org/data/2.5/forecast?lat=${timbuktuLat}&lon=${timbuktuLong}&appid=${myAppId}&units=metric`;
+
+async function fetchForecast() {  
+    try {
+        const response = await fetch(forecastUrl);
+        if (response.ok) {
+            const forecastData = await response.json();
+            console.log('Full Forecast Data:', forecastData);
+            displayForecast(forecastData);
+        } else {
+            console.error('Response Error:', response.status, response.statusText);
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.error('Fetch Error:', error);
+    }
+    
+}
+
+function displayForecast(data) {
+    const dailyForecast = {};
+
+    data.list.forEach(item => {
+        const date = new Date(item.dt * 1000); 
+        const day = date.toLocaleDateString('en-US', { weekday: 'long' });
+        const time = date.getHours(); 
+
+        // console.log(`Day: ${day}, Time: ${time}, Temp: ${item.main.temp}`);
+
+        if ((time === 13 || time === 16) && !dailyForecast[day]) {
+            dailyForecast[day] = Math.round(item.main.temp);
+        }
+    });
+
+    // Build the forecast HTML
+    forecastContainer.innerHTML = ''; 
+    if (Object.keys(dailyForecast).length === 0) {
+        forecastContainer.innerHTML = '<p>No forecast data available.</p>';
+    } else {
+        Object.keys(dailyForecast).slice(0, 3).forEach(day => { // make it only 3 days
+            const temp = dailyForecast[day];
+            const forecastItem = document.createElement('p');
+            forecastItem.innerHTML = `${day}: <strong>${temp}&deg;C</strong>`;
+            forecastContainer.appendChild(forecastItem);
+        });
+    }
+}
+
+fetchForecast();
 
 // LOAD Business members data (from JSON file)
 document.addEventListener('DOMContentLoaded', () => {
@@ -196,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // populate spotlight cards
         randomMembers.forEach(member => {
+            const membershipLevel = member.level === 1 ? 'Gold' : 'Silver'; // Determine membership level
             const card = document.createElement('div');
             card.classList.add('scard');
 
@@ -212,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><strong>ADDRESS:</strong> ${member.address}</p>
                         <p><strong>PHONE:</strong> ${member.phone}</p>
                         <p><strong>URL:</strong> <a href="${member.url}" target="_blank">${member.url}</a></p>
+                        <p><strong>Membership Level:</strong> ${membershipLevel}</p>
                     </div>
                 </div>
             `;

@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timbuktu Chamber of Commerce Home Page</title>
+    <title>Thank You for Applying to Join the Timbuktu Chamber of Commerce </title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Home page for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
-    <meta name="author" content="Lillian Arp">
+    <meta name="description" content="Application Response Page for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
+    <meta name="author" content="built by Lillian Arp">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Timbuktu Chamber of Commerce: Home Page">
+    <meta property="og:title" content="Application Response Page for the Timbuktu Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/timbuktu_600x799.webp">
-    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/join.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:description" content="Timbuktu Chamber of Commerce: Home Page">
+
+    <meta property="og:description" content="Application Response Page for the Timbuktu Chamber of Commerce">
     <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
     <meta name="twitter:image:alt" content="The Timbuktu Chamber of Commerce">
+
     <meta property="fb:app_id" content="your_app_id">
     <meta name="twitter:site" content="@website-username">
 
     <!-- Fonts, Styles and Scripts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
+
     <script src="scripts/chamber.js" defer></script>
 </head>
 
 <body>
-    
-    <header>
+
+    <header>     
         <div class="site-info">
             <a href="index.html"><img src="images/picture.png" alt="Chamber Logo" width="120" height="120"></a>
             <div class="site-title">
@@ -51,66 +56,31 @@
 
         <nav>
             <ul>
-                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li class="active"><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <picture>
-            <source srcset="images/shopkeeper_1000x666.webp" media="(min-width: 768px)">
-            <img src="images/shopkeeper_600x400.webp" alt="Shopkeeper in a Market Stall" width="600" height="400">
-        </picture> 
-    </section>
-
     <main>
 
         <div class="pagetitle">
-            <h2>Home</h2>
+            <h2>Success!</h2>
         </div>  
-        
-        <div class="events-block">
-            <div class="ecard events">
-                <h4>Events</h4>
-                <div class="event-content">
-                    Here's the first block - events.
-                </div>
+        <div class="thankyou-blurb">
+            <p>Thank you for applying to join the Timbuktu Chamber of Commerce. Here's a summary of your application:</p>
+
+            <div id="form-summary">
+                <!-- The summary of the form details will be displayed here -->
             </div>
 
-            <div class="ecard">
-                <h4>Current Weather</h4>
-                <div class="current-weather">
-                    <div class="ecard-left"><img id="weather-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgEB/hd3E/cAAAAASUVORK5CYII=" alt="Weather icon"></div>
-                    <div class="ecard-right"><p id="current-temp"></p>
-                        <p id="weather-desc"></p>
-                        <p id="max-temp"></p>
-                        <p id="min-temp"></p>
-                        <p id="humidity"></p>
-                        <p id="sunrise-time"></p>
-                        <p id="sunset-time"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ecard">
-                <h4>Weather Forecast</h4>
-                <div class="weather-forecast">
-                    <div id="3day-forecast">
-                        <!-- forecast details-->
-                    </div>
-                </div>
-            </div>
+            <p>Our team will review your application details within 3-5 business days. </p>
+            <p>Once your application is approved, we'll send you a welcome email with further instructions, including how to access your membership benefits. </p>
+            <p>If you have any questions in the meantime, feel free to contact us at support@timbuktuchamber.com or call us at (123) 456-7890.</p>
         </div>
-
-        <div class="spotlight-cards">
-            <!-- Random, filetered business cards go dynamically here -->
-        </div>
-        
-        <a href="join.html" class="home-cta">Join the Timbuktu Chamber of Commerce</a>
 
     </main>
 

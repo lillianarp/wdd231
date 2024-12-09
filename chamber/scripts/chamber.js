@@ -291,6 +291,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+// Fun with Modals
+const modals = document.querySelectorAll(".membership-blurb");
+const openButtons = document.querySelectorAll(".open-button");
+const closeButtons = document.querySelectorAll(".close-button");
+
+modals.forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+        if(event.target === modal) {
+            modal.close();
+        }
+    });
+});
+
+openButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        modals[index].showModal(); // Open the corresponding modal
+    });
+});
+
+closeButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        modals[index].close(); // Close the corresponding modal
+    });
+});
+
+// Form summary on thankyou.html 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const firstName = urlParams.get('first_name');
+const lastName = urlParams.get('last_name');
+const email = urlParams.get('email');
+const mobilePhone = urlParams.get('mobile_phone');
+const organization = urlParams.get('organization');
+
+const formSummary = document.getElementById('form-summary');
+formSummary.innerHTML = `
+    <p>First Name: <strong> ${firstName || 'Not Provided'}</strong></p>
+    <p>Last Name: <strong>${lastName || 'Not Provided'}</strong></p>
+    <p>Email Address: <strong>${email || 'Not Provided'}</strong></p>
+    <p>Phone Number: <strong>${mobilePhone || 'Not Provided'}</strong></p>
+    <p>Organization Name: <strong>${organization || 'Not Provided'}</strong></p>
+`;
+
+
 // FOOTER: Year & Last Modified Date
 const currentYear = new Date().getFullYear();
 document.getElementById("currentyear").textContent = currentYear;

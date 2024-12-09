@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Directory for the Timbuktu Chamber of Commerce</title>
+    <title>Join the Timbuktu Chamber of Commerce | Membership Join Page</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Business Directory for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
-    <meta name="author" content="Lillian Arp">
+    <meta name="description" content="Membership Join Page for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
+    <meta name="author" content="built by Lillian Arp">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Timbuktu Chamber of Commerce: Business Directory">
+    <meta property="og:title" content="Timbuktu Chamber of Commerce: Membership Join Page">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/city_600x400.jpg">
-    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/directory.html">
+    <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/timbuktu_600x799.webp">
+    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/join.html">
     <meta name="twitter:card" content="summary_large_image">
 
-    <meta property="og:description" content="Timbuktu Chamber of Commerce: Business Directory">
+    <meta property="og:description" content="Timbuktu Chamber of Commerce: Membership Join Page">
     <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
     <meta name="twitter:image:alt" content="The Timbuktu Chamber of Commerce">
 
@@ -38,10 +38,9 @@
 
 <body>
 
-    <header>
-        
+    <header>     
         <div class="site-info">
-            <img src="images/picture.png" alt="Chamber Logo">
+            <a href="index.html"><img src="images/picture.png" alt="Chamber Logo" width="120" height="120"></a>
             <div class="site-title">
                 <h1>Timbuktu</h1>
                 <p>Chamber of Commerce</p>
@@ -64,12 +63,173 @@
                 <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
             </ul>
         </nav>
-
     </header>
+
 
     <main>
 
+        <section id="membership-application">
+
+            <div class="pagetitle">
+                <h2>Apply to Join our Chamber of Commerce</h2>
+            </div>  
+
+            <!-- form -->
+            <div class="columns">
+
+                <form action="thankyou.html" method="get">
+                    <!-- first Name -->
+                    <label for="first-name">First Name:</label>
+                    <input 
+                        type="text" 
+                        id="first-name" 
+                        name="first_name"
+                        autocomplete="given-name"
+                        title="Enter your first name." 
+                        required 
+                        aria-required="true">
+                    
+                    <!-- last name -->
+                    <label for="last-name">Last Name:</label>
+                    <input 
+                        type="text" 
+                        id="last-name" 
+                        name="last_name"
+                        autocomplete="family-name"
+                        title="Enter your last name." 
+                        required 
+                        aria-required="true">
+
+                    <!-- organization title -->
+                    <label for="organization-title">Organization Title</label>
+                    <input 
+                        type="text" 
+                        id="organization-title" 
+                        name="title" 
+                        placeholder="Your title in the organization"
+                        autocomplete="organization-title"
+                        pattern="^[a-zA-Z\s\-]{7,}$"
+                        title="Must be at least 7 characters long and only contain letters, hyphens and spaces.">
+
+                    <!-- email -->
+                    <label for="email">Email Address:</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="john8g@gmail.com" 
+                        autocomplete="email"
+                        required 
+                        aria-required="true">
+
+                    <!-- phone number -->
+                    <label for="mobile-phone">Mobile Phone:</label>
+                    <input 
+                        type="tel" 
+                        id="mobile-phone" 
+                        name="mobile_phone" 
+                        placeholder="987-555-1234"
+                        pattern="^\+?[0-9\s\-]{7,15}$"
+                        title="Enter a valid phone number with 7 to 15 digits." 
+                        autocomplete="tel" 
+                        required 
+                        aria-required="true">
+
+                    <!-- business or organization name -->
+                    <label for="organization">Business or Organization Name:</label>
+                    <input 
+                        type="text" 
+                        id="organization" 
+                        name="organization"  
+                        title="The name of your business or organization."
+                        autocomplete="organization"
+                        required 
+                        aria-required="true">
+
+                    <!-- choose your membership level -->
+                    <label for="membership">Membership Level:</label>
+                    <select 
+                        id="membership" 
+                        name="membership">
+                        <!-- placeholder option -->
+                        <option value="" disabled selected>Choose your membership level</option>
+                        <option value="np">NP Membership (Non-Profit, No Fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+
+                    <!-- description -->
+                    <label for="business-description">Describe Your Business or Organization:</label>
+                    <textarea 
+                        id="business-description" 
+                        name="business-description" 
+                        title="Tell us about your business or organization." 
+                        rows="5"></textarea>
+
+                    <!-- hidden timestamp -->
+                    <input 
+                        type="hidden" 
+                        id="timestamp" 
+                        name="timestamp" 
+                        value="">
+
+                    <!-- submit button -->
+                    <button type="submit">Apply for Membership</button>
+                </form>
+
+                <div class="membership-levels">
+                    <div class="card">
+                        <h3>NP Membership</h3>
+                        <p>(Non-Profit, No Fee)</p>
+                        <button class="learn open-button">Learn More</button>
+                    </div>
+                    <dialog class="membership-blurb" id="modal">
+                        <h3>NP Membership</h3>
+                        <p class="pricing">Free of Charge</p>
+                        <p>Designed for non-profit organizations, this membership offers free access to community events and networking opportunities. Share your organization's initiatives with local businesses and build valuable connections.</p>
+                        <button class="close-button">❌</button>
+                    </dialog>
+                    <div class="card">
+                        <h3>Bronze Membership</h3>
+                        <button class="learn open-button">Learn More</button>
+                    </div>
+                    <dialog class="membership-blurb" id="modal">
+                        <h3>Bronze Membership</h3>
+                        <p class="pricing">$10/month or $100/year</p>
+                        <p>Ideal for small businesses, this entry-level membership provides a listing in our online directory and discounted event fees. Gain visibility within the local business community while accessing resources to grow your business.</p>
+                        <button class="close-button">❌</button>
+                    </dialog>
+                    <div class="card">
+                        <h3>Silver Membership</h3>
+                        <button class="learn open-button">Learn More</button>
+                    </div>
+                    <dialog class="membership-blurb" id="modal">
+                        <h3>Silver Membership</h3>
+                        <p class="pricing">$20/month or $200/year</p>
+                        <p>Perfect for growing businesses, this membership includes all Bronze benefits plus priority event placement and one complimentary business spotlight in our monthly newsletter. Boost your visibility and establish your presence in the Timbuktu marketplace.</p>
+                        <button class="close-button">❌</button>
+                    </dialog>
+                    <div class="card">
+                        <h3>Gold Membership</h3>
+                        <button class="learn open-button">Learn More</button>
+                    </div>
+                    <dialog class="membership-blurb" id="modal">
+                        <h3>Gold Membership</h3>
+                        <p class="pricing">$40/month or $400/year</p>
+                        <p>The ultimate tier for leaders in the community, Gold Membership includes all Silver benefits, premium directory placement, and exclusive access to chamber-hosted VIP events. Elevate your brand and forge high-impact partnerships with local decision-makers.</p>
+                        <button class="close-button">❌</button>
+                    </dialog>
+                </div>
+
+            </div> <!-- end columns -->
+
+        </section>
+
     </main>
+
+
+
 
     <footer>
         <div class="chamber-address">

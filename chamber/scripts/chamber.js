@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Fun with Modals
+// fun with Modals
 const modals = document.querySelectorAll(".membership-blurb");
 const openButtons = document.querySelectorAll(".open-button");
 const closeButtons = document.querySelectorAll(".close-button");
@@ -307,34 +307,56 @@ modals.forEach((modal) => {
 
 openButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-        modals[index].showModal(); // Open the corresponding modal
+        modals[index].showModal(); 
     });
 });
 
 closeButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-        modals[index].close(); // Close the corresponding modal
+        modals[index].close(); 
     });
 });
 
-// Form summary on thankyou.html 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
+document.addEventListener("DOMContentLoaded", () => {
+    // Check if we're on thankyou.html - form-summary exist?
+    const formSummary = document.getElementById("form-summary");
+    if (formSummary) {
+        // FORM summary on thankyou.html 
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
 
-const firstName = urlParams.get('first_name');
-const lastName = urlParams.get('last_name');
-const email = urlParams.get('email');
-const mobilePhone = urlParams.get('mobile_phone');
-const organization = urlParams.get('organization');
+        const firstName = urlParams.get('first_name');
+        const lastName = urlParams.get('last_name');
+        const email = urlParams.get('email');
+        const mobilePhone = urlParams.get('mobile_phone');
+        const organization = urlParams.get('organization');
+        const timestamp = urlParams.get('timestamp');
 
-const formSummary = document.getElementById('form-summary');
-formSummary.innerHTML = `
-    <p>First Name: <strong> ${firstName || 'Not Provided'}</strong></p>
-    <p>Last Name: <strong>${lastName || 'Not Provided'}</strong></p>
-    <p>Email Address: <strong>${email || 'Not Provided'}</strong></p>
-    <p>Phone Number: <strong>${mobilePhone || 'Not Provided'}</strong></p>
-    <p>Organization Name: <strong>${organization || 'Not Provided'}</strong></p>
-`;
+        formSummary.innerHTML = `
+            <p>First Name: <strong> ${firstName || 'Not Provided'}</strong></p>
+            <p>Last Name: <strong>${lastName || 'Not Provided'}</strong></p>
+            <p>Email Address: <strong>${email || 'Not Provided'}</strong></p>
+            <p>Phone Number: <strong>${mobilePhone || 'Not Provided'}</strong></p>
+            <p>Organization Name: <strong>${organization || 'Not Provided'}</strong></p>
+            <p>Timestamp: <strong>${timestamp || 'Not provided'}</strong></p>
+        `;
+    }
+
+        // NOW...about that hidden timestamp in join.html
+        const form = document.querySelector("form");
+        if (form) {
+            const timestampField = document.getElementById("timestamp");
+            if (timestampField) {
+                timestampField.value = new Date().toISOString(); // Set timestamp
+            }
+
+            form.addEventListener("submit", () => {
+                if (timestampField && !timestampField.value) {
+                    timestampField.value = new Date().toISOString(); // Fallback
+                }
+            });
+        }
+        });
 
 
 // FOOTER: Year & Last Modified Date

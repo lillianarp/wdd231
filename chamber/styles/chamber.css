@@ -496,6 +496,12 @@ select {
     margin-bottom: 1rem;
 }
 
+select:disabled option,
+select option:disabled {
+    color: #fff; 
+    background-color: #555; 
+}
+
 button[type="submit"] {
     background-color: #474747;
     color: white;

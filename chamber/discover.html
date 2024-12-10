@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Timbuktu Through the Timbuktu Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover Page for the Timbuktu Chamber of Commerce | WDD 231 Assignment">
+    <meta name="author" content="built by Lillian Arp">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Timbuktu Chamber of Commerce: Discover Timbuktu Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/timbuktu_600x799.webp">
+    <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/join.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="og:description" content="Timbuktu Chamber of Commerce: Discover Timbuktu Page">
+    <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
+    <meta name="twitter:image:alt" content="The Timbuktu Chamber of Commerce">
+
+    <meta property="fb:app_id" content="your_app_id">
+    <meta name="twitter:site" content="@website-username">
+
+    <!-- Fonts, Styles and Scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" media="all">
+    </noscript>
+
+    <link rel="stylesheet" href="styles/normalize.css" media="all">
+    <link rel="stylesheet" href="styles/chamber.css" media="all">
+
+    <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+
+    <header>     
+        <div class="site-info">
+            <a href="index.html"><img src="images/picture.png" alt="Chamber Logo" width="120" height="120"></a>
+            <div class="site-title">
+                <h1>Timbuktu</h1>
+                <p>Chamber of Commerce</p>
+            </div>
+        </div>
+
+            <div class="menu-controls">
+                <a href="#"><img class="half-circle-resp" src="images/half-circle_80x80.png" alt="Half-circle"></a>
+                <!-- Our hamburger goes here somewhere -->
+                <button id="hamburger">
+                    ☰</button>
+            </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li class="active"><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
+            </ul>
+        </nav>
+    </header>
+
+<main>    
+    <div class="pagetitle">
+        <h2>Discover Timbuktu</h2>
+    </div>  
+
+    <section id="discover-content">
+        <div id="sidebar">
+            <ul class="sidebar-blocks">
+                <li class="block last-visited">
+                    <!-- Dynamic Message to User -->
+                     <p>Welcome back! The last time you visited was... </p>
+                </li>
+                <li class="block event-ad">
+                    <p>Come to the event next week!</p>
+                </li>
+                <li class="block chamber-stats">
+                    <p>Here are some demographics about Timbuktu</p>
+                </li>
+                <li class="block calendar">
+                    <h3>Event Calendar</h3>
+                    <div id="calendar"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="gallery">
+            <img src="image1.jpg" alt="Beautiful view of Timbuktu" loading="eager">
+            <img src="image2.jpg" alt="Historic Timbuktu architecture" loading="lazy">
+            <img src="image3.jpg" alt="Timbuktu market scene" loading="lazy">
+            <img src="image4.jpg" alt="Desert landscape in Timbuktu" loading="lazy">
+            <img src="image5.jpg" alt="Cultural artifacts in Timbuktu" loading="lazy">
+            <img src="image6.jpg" alt="Sunset over Timbuktu" loading="lazy">
+        </div>
+    </section> 
+
+</main>
+
+<footer>
+    <div class="chamber-address">
+        Timbuktu Chamber of Commerce<br>
+        10 Rue De La Paix<br>
+        Timbuktu, Mali 999<br>
+        info@timbuktucc.org<br>
+        (223) 555-2300<br>
+    </div>
+
+    <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="facebook"></a>
+        <a href="#"><img src="images/youtube.png" alt="youtube"></a>
+        <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+    </div>
+
+    <div class="project-notes">
+        WDD231 Class Project <br>
+        🌴 Lillian Arp 🌴 <br>
+        © <span id="currentyear"></span> Timbuktu Chamber of Commerce <br>
+        <span id="lastModified"></span>
+    </div>
+</footer>
+
+</body>
+</html>

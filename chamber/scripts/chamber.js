@@ -358,6 +358,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         });
 
+// Dynamic Message in the Sidebar
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.id === "discover-page") {
+        const messageContainer = document.querySelector(".block.last-visited h3");
+        const lastVisit = localStorage.getItem("lastVisit");
+        const currentVisit = Date.now();
+
+        let message; // no initial value
+
+        if (!lastVisit) {
+            message = "Welcome! Let us know if you have any questions."
+        } else {
+            const timeDifference = currentVisit - parseInt(lastVisit);
+            const daysSinceLastVisit = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
+            
+            if (daysSinceLastVisit < 1) {
+                message = "Back so soon! Awesome!"
+            } else {
+                message = `You last visited ${daysSinceLastVisit} days ago.`;
+            }
+        }
+
+        messageContainer.textContent = message; // display the message 
+
+        localStorage.setItem("lastVisit", currentVisit.toString());
+    }
+});
+
 
 // FOOTER: Year & Last Modified Date
 const currentYear = new Date().getFullYear();

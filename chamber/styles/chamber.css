@@ -599,8 +599,31 @@ footer {
     border: 1px solid #ddd;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.8rem;
+  }
+
+  .sidebar-blocks .block p {
+    padding-bottom: 0.5rem;
+  }
+
+  .sidebar-blocks .block h4 {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dotted #ccc;
   }
   
+  .sidebar-blocks .block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  .sidebar-blocks .block ul {
+    margin-left: 2rem;
+  }
+
   #gallery {
     grid-column: 1;
     grid-row: 2;
@@ -616,6 +639,16 @@ footer {
     height: auto; 
     border-radius: 6px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+}
+
+#gallery figcaption p {
+    font-size: 1rem;
+}
+
+#gallery figcaption {
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 
@@ -770,4 +803,25 @@ footer {
         grid-row: 1;    
         /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
       }
+
+      #gallery img {
+        transition: box-shadow 0.3s ease;
+      }
+
+      @keyframes zoomInOut {
+        0% {
+            transform: scale(1); /* Normal size */
+        }
+        50% {
+            transform: scale(1.03); /* Slight zoom */
+        }
+        100% {
+            transform: scale(1); /* Return to normal size */
+        }
+    }
+
+      #gallery img:hover {
+        animation: zoomInOut 0.5s ease-out; /* Animation duration and easing */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    }
 }

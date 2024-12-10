@@ -40,7 +40,7 @@
     <script src="scripts/chamber.js" defer></script>
 </head>
 
-<body>
+<body id="discover-page">
 
     <header>     
         <div class="site-info">
@@ -79,27 +79,85 @@
             <ul class="sidebar-blocks">
                 <li class="block last-visited">
                     <!-- Dynamic Message to User -->
-                     <p>Welcome back! The last time you visited was... </p>
+                     <h3></h3>
                 </li>
                 <li class="block event-ad">
-                    <p>Come to the event next week!</p>
+                    <h4>Upcoming Chamber Events</h4>
+                    <img src="images/foodfestival_500x522.webp" alt="Food Festival Poster" width="500" height="522">
+                    <p><strong>Timbuktu Food Festival:</strong> 12 March 2025</p>
+                    <p><strong>Grand Market Craft Expo:</strong> 27 July 2025</p>
+                    <p><strong>Annual Awards Gala:</strong> 06 September 2025</p>
                 </li>
                 <li class="block chamber-stats">
-                    <p>Here are some demographics about Timbuktu</p>
+                    <h4>Timbuktu at a Glance</h4>
+                    <ul>
+                        <li><strong>Population:</strong> ~70,000 (51% male, 49% female)</li>
+                        <li><strong>Median Age:</strong> 16.8 years (youthful population)</li>
+                        <li><strong>Ethnic Groups:</strong> Tuareg, Songhai, Fulani, Moors</li>
+                        <li><strong>Key Industries:</strong> 
+                            <ul>
+                                <li>Agriculture: Corn and rice in the Niger River valley</li>
+                                <li>Crafts: Textiles (64%), jewelry (12%), shoemaking (5%)</li>
+                                <li>Trade: Historic salt trade via camel caravans</li>
+                                <li>Tourism: UNESCO World Heritage sites</li>
+                            </ul>
+                        </li>
+                        <li><strong>Historic Legacy:</strong> Intellectual and spiritual hub of the 15th century, home to Sankore University</li>
+                    </ul>
                 </li>
                 <li class="block calendar">
-                    <h3>Event Calendar</h3>
-                    <div id="calendar"></div>
+                    <h4>To Do in Timbuktu</h4>
+                    <img src="images/mosque_500x237.webp" alt="Djingareyber Mosque" width="500" height="237">
+                    <p>Visit the iconic <a href="https://artsandculture.google.com/story/djinguereber-mosque/_wWBhTCQ8P9hPg?hl=en">Djingareyber Mosque</a></p>
+                    <img src="images/university_500x237.webp" alt="Sankore Madrash (University)" width="500" height="237">
+                    <p>Explore historic manuscripts at <a href="https://gpe.wikipedia.org/wiki/University_of_Sankor%C3%A9">Sankoré Madrasah (University) </a></p>
                 </li>
             </ul>
         </div>
         <div id="gallery">
-            <img src="image1.jpg" alt="Beautiful view of Timbuktu" loading="eager">
-            <img src="image2.jpg" alt="Historic Timbuktu architecture" loading="lazy">
-            <img src="image3.jpg" alt="Timbuktu market scene" loading="lazy">
-            <img src="image4.jpg" alt="Desert landscape in Timbuktu" loading="lazy">
-            <img src="image5.jpg" alt="Cultural artifacts in Timbuktu" loading="lazy">
-            <img src="image6.jpg" alt="Sunset over Timbuktu" loading="lazy">
+            <figure>
+                <img src="images/timbuktu1_1200x648.webp" alt="Timbuktu Airport" width="1200" height="648" loading="eager">
+                <figcaption>
+                    <p>Timbuktu Airport</p>
+                    By <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/48600082269@N01">upyernoz</a> from Haverford, USA - <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/upyernoz/6916639/">Timbuktu Airport</a>, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=604483">Link</a></figcaption>
+            </figure>
+            <figure>
+                <img src="images/timbuktu2_1200x1369.webp" alt="African People at Work" width="1200" height="1369" loading="lazy">
+                <figcaption>
+                    <p>African People at Work</p>
+                    By <a href="//commons.wikimedia.org/w/index.php?title=User:PGskot&amp;action=edit&amp;redlink=1" class="new" title="User:PGskot (page does not exist)">PGskot</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=64442761">Link</a> 
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/timbuktu3_1200x790.webp" alt="A Tuareg man, wearing traditional attire, in Timbuktu" width="1200" height="790" loading="lazy">
+                <figcaption>
+                    <p>A Tuareg man, wearing traditional attire, in Timbuktu</p>
+                    By Angeline A. van Achterberg, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=106480644">Link</a> 
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/timbuktu4_1200x824.webp" alt="Timbuktu, preferred method of transport, Mali, W. Africa" width="1200" height="824" loading="lazy">
+                <figcaption>
+                    <p>Timbuktu, preferred method of transport, Mali, W. Africa</p>
+                    Photo by <a href="https://www.flickr.com/people/3059349393/" rel="nofollow">Emilio Labrador</a> on 
+                    <a href="https://www.flickr.com/photos/3059349393/3331431933/" rel="nofollow">Flickr</a>, 
+                    licensed under <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>.
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/timbuktu5_1200x1583.webp" alt="Sankore Madrasah, one of three ancient centers of learning located in Timbuktu, Mali, Africa" width="1200" height="1583" loading="lazy">
+                <figcaption>
+                    <p>Sankore Madrasah, an ancient center of learning in Timbuktu</p>
+                    By <a href="//commons.wikimedia.org/wiki/User:HistoriaSalutis" title="User:HistoriaSalutis">Dr. Ondřej Havelka (cestovatel)</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=130226162">Link</a> 
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="images/timbuktu6_1200x803.webp" alt="Manuscripts of the Ahmed Baba Centre" width="1200" height="803" loading="lazy">
+                <figcaption>
+                    <p>Manuscripts of the Ahmed Baba Centre</p>
+                    By UNESCO Bureau of Mali - This place is a UNESCO <a href="https://en.wikipedia.org/wiki/World_Heritage_Site" class="extiw" title="en:World Heritage Site">World Heritage Site</a>, listed as<a rel="nofollow" class="external text" href="https://whc.unesco.org/en/list/119/">Timbuktu</a>., <a href="https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en" title="Creative Commons Attribution-Share Alike 3.0 igo">CC BY-SA 3.0 igo</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=58157760">Link</a> 
+                </figcaption>
+            </figure>
         </div>
     </section> 
 

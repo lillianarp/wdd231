@@ -40,23 +40,21 @@
     <script src="scripts/chamber.js" defer></script>
 </head>
 
-<body>
+<body id="join-page">
 
     <header>     
-        <div class="site-info">
-            <a href="index.html"><img src="images/picture.png" alt="Chamber Logo" width="120" height="120"></a>
-            <div class="site-title">
-                <h1>Timbuktu</h1>
-                <p>Chamber of Commerce</p>
+        <div id="header-content">
+            <div class="site-info">
+                <a href="index.html"><img src="images/picture.png" alt="Chamber Logo" width="120" height="120"></a>
+                <div class="site-title">
+                    <h1>Timbuktu</h1>
+                    <p>Chamber of Commerce</p>
+                </div>
             </div>
-        </div>
 
-            <div class="menu-controls">
-                <a href="#"><img class="half-circle-resp" src="images/half-circle_80x80.png" alt="Half-circle"></a>
-                <!-- Our hamburger goes here somewhere -->
-                <button id="hamburger">
-                    ☰</button>
-            </div>
+            <!-- Our hamburger goes here somewhere -->
+            <button id="hamburger">
+                ☰</button>
 
         <nav>
             <ul>
@@ -64,7 +62,6 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li class="active"><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="#"><img class="half-circle" src="images/half-circle_70x70.png" alt="Strange half circle"></a></li> 
             </ul>
         </nav>
     </header>
@@ -81,7 +78,7 @@
             <!-- form -->
             <div class="columns">
 
-                <form action="thankyou.html" method="get">
+                <form class="box-shadow rounded" action="thankyou.html" method="get">
                     <!-- first Name -->
                     <label for="first-name">First Name:</label>
                     <input 
@@ -153,6 +150,7 @@
                     <!-- choose your membership level -->
                     <label for="membership">Membership Level:</label>
                     <select 
+                        class="box-shadow rounded"    
                         id="membership" 
                         name="membership">
                         <!-- placeholder option -->
@@ -183,42 +181,42 @@
                 </form>
 
                 <div class="membership-levels">
-                    <div class="card">
+                    <div class="card box-shadow">
                         <h3>NP Membership</h3>
                         <p>(Non-Profit, No Fee)</p>
                         <button class="learn open-button">Learn More</button>
                     </div>
-                    <dialog class="membership-blurb modal">
+                    <dialog class="membership-blurb modal box-shadow">
                         <h3>NP Membership</h3>
                         <p class="pricing">Free of Charge</p>
                         <p>Designed for non-profit organizations, this membership offers free access to community events and networking opportunities. Share your organization's initiatives with local businesses and build valuable connections.</p>
                         <button class="close-button">❌</button>
                     </dialog>
-                    <div class="card">
+                    <div class="card box-shadow">
                         <h3>Bronze Membership</h3>
                         <button class="learn open-button">Learn More</button>
                     </div>
-                    <dialog class="membership-blurb modal">
+                    <dialog class="membership-blurb modal box-shadow">
                         <h3>Bronze Membership</h3>
                         <p class="pricing">$10/month or $100/year</p>
                         <p>Ideal for small businesses, this entry-level membership provides a listing in our online directory and discounted event fees. Gain visibility within the local business community while accessing resources to grow your business.</p>
                         <button class="close-button">❌</button>
                     </dialog>
-                    <div class="card">
+                    <div class="card box-shadow">
                         <h3>Silver Membership</h3>
                         <button class="learn open-button">Learn More</button>
                     </div>
-                    <dialog class="membership-blurb modal">
+                    <dialog class="membership-blurb modal box-shadow">
                         <h3>Silver Membership</h3>
                         <p class="pricing">$20/month or $200/year</p>
                         <p>Perfect for growing businesses, this membership includes all Bronze benefits plus priority event placement and one complimentary business spotlight in our monthly newsletter. Boost your visibility and establish your presence in the Timbuktu marketplace.</p>
                         <button class="close-button">❌</button>
                     </dialog>
-                    <div class="card">
+                    <div class="card box-shadow">
                         <h3>Gold Membership</h3>
                         <button class="learn open-button">Learn More</button>
                     </div>
-                    <dialog class="membership-blurb modal">
+                    <dialog class="membership-blurb modal box-shadow">
                         <h3>Gold Membership</h3>
                         <p class="pricing">$40/month or $400/year</p>
                         <p>The ultimate tier for leaders in the community, Gold Membership includes all Silver benefits, premium directory placement, and exclusive access to chamber-hosted VIP events. Elevate your brand and forge high-impact partnerships with local decision-makers.</p>

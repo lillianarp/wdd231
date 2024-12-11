@@ -1,3 +1,5 @@
+/* GLOBAL RESET */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,6 +16,18 @@ body {
     line-height: 1.6rem;
 }
 
+/* Utility Classes */
+
+.box-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+    border-radius: 6px;
+}
+
+/* Begin */
+
 header,
 footer {
     background-color: #ddd;
@@ -21,17 +35,24 @@ footer {
 }
 
 header {
-    padding: 2rem 2rem;
-    display: flex;
-    justify-content: flex-end;
+    padding: 2rem 2rem; 
+    align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between;
+    /* outline: 1px dotted red; */
 }
 
 .site-info {
     display: flex;
     align-items: center;
-    width: 80%;
-    line-height: 1rem;
+    width: 100%;
+    /* outline: 2px dotted green; */
 }
 
 .site-info img {
@@ -41,19 +62,15 @@ header {
     margin: 1rem 1rem 0 0;
 }
 
-.menu-controls {
-    /* outline: 2px dotted purple; */
-    width: 20%;
-    display: flex;
-    margin-right: 2rem;
-    align-items: center;
+.site-title h1 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+    padding: 0;
+    margin: 0;
 }
 
-.menu-controls .half-circle-resp {
-    /* outline: 2px dotted red; */
-    margin-right: 2rem;
-    height: 50px;
-    width: 50px;
+.site-title p{
+    font-size: 1.2rem;
 }
 
 #hamburger {
@@ -61,18 +78,16 @@ header {
     font-size: 2.5rem;
     font-weight: 600;
     background-color: transparent;
-    border: none;
+    width: 100px;
     cursor: pointer;
+    border: none;
 }
 
-.half-circle {
-    display: none; 
-}
-
-nav {
+nav { /* drop down */
     position: absolute;
-    top: 120px;
-    left: 1rem;
+    z-index: 1000;
+    top: 150px;
+    width: 95%;
     right: 1rem;
     text-align: center;
     background-color: #fff;
@@ -80,12 +95,15 @@ nav {
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* outline: 1px solid red; */
 }
 
 nav.active {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 nav ul {
@@ -98,7 +116,8 @@ nav ul li {
     margin: 0;
     /* border: 1px dotted blue; */
     padding: 0.6rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
 nav ul li:hover {
@@ -113,14 +132,14 @@ nav ul li a {
 }
 
 main {
-    margin: 1rem auto;
-    width: 95%;
+    margin: 1.5rem auto 2rem auto;
+    width: 90%;
     /* outline: 1px dotted red; */
 }
 
 .pagetitle h2 {
     padding-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     padding-bottom: 1rem;
     color: #474747;
@@ -148,6 +167,11 @@ main {
 #toggle-buttons button {
     padding: 0.5rem 2rem;
     width: 100%;
+    cursor: pointer;
+}
+
+#toggle-buttons button:hover {
+    background-color: #fff;
 }
 
 #cards-container {
@@ -211,6 +235,11 @@ main {
 }
 
 /* Index Styles */
+
+#hero {
+    position: relative;
+    z-index: 1;
+}
 
 #hero img {
     width: 100%;
@@ -338,18 +367,17 @@ main {
     text-align: center;
     padding: 1.5rem;
     border-radius: 6px;
-    background-color: #474747;
+    background-color: #F1CA7F;
     margin: 2rem auto;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
-    color: #fff;
 }
 
 .home-cta:link, 
 .home-cta:visited {
-    color: #fff; 
+    color: #474747; 
 }
 
 .home-cta:hover {
@@ -366,7 +394,7 @@ main {
 #membership-application {
     width: 100%;
     margin: 0 auto;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     align-items: start;
 }
 
@@ -395,7 +423,6 @@ main {
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     background-color: #ccc;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
     text-align: center;
     /* the animation */
@@ -423,7 +450,6 @@ main {
 
 .membership-blurb {
     position: relative;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #f1d5a5;
     max-width: 80%;
     padding: 1.5rem;
@@ -472,8 +498,6 @@ form {
     margin: 0;
     padding: 1.5rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -495,8 +519,6 @@ select {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
     margin-bottom: 1rem;
 }
 
@@ -597,9 +619,8 @@ footer {
     padding: 1rem;
     margin: 0;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     line-height: 1.8rem;
+    background-color: #eee;
   }
 
   .sidebar-blocks .block p {
@@ -637,8 +658,6 @@ footer {
   #gallery img {
     max-width: 100%; 
     height: auto; 
-    border-radius: 6px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     cursor: pointer;
 }
 
@@ -660,18 +679,25 @@ footer {
 @media (min-width: 768px) {
 
     header {
-        display: flex;
-        justify-content: space-between;
+        /* display: flex;
+        justify-content: space-evenly; */
         align-items: center;
         width: 100%;
         padding: 2rem;
     }
 
-    .site-info {
-        width: 30%;
+    #header-content {
         display: flex;
         justify-content: space-between;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .site-info {
+        display: flex;
+        justify-content: space-evenly;
         align-items: center;
+        /* outline: 2px dotted blue; */
     }
 
     .site-info a {
@@ -679,7 +705,6 @@ footer {
         align-items: center;
         margin-right: 1.5rem;
         text-decoration: none;
-        /* outline: 1px dotted red; */
     }
 
     .site-title {
@@ -700,7 +725,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .menu-controls .half-circle-resp {
+    .menu-controls {
         display: none;
     }
     
@@ -711,37 +736,30 @@ footer {
         opacity: 1;
         transition: none;
         display: flex; 
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         gap: 1rem;
-        width: 35%;
+        width: 40%;
         background-color: #ddd;
+        box-shadow: none;
     }
 
     nav ul {
-        list-style-type: none;
         display: flex;
-        font-size: 1.2rem;
-        font-weight: 500;
+        /* font-size: 1.5rem;
+        font-weight: 500; */
         gap: 2rem;
     }
     
     nav ul a {
         color: #000;
         text-decoration: none;
+        font-size: 1.5rem;
     }
 
     nav ul a:hover {
         text-decoration: underline;
         background-color: transparent;
-    }
-
-   .half-circle {
-        display: inline-block;
-        /* max-width: 1.5rem; */
-        align-self: center;
-        height: 30px;
-        width: 30px;
     }
 
     #hamburger {
@@ -769,7 +787,7 @@ footer {
     }
 
     .home-cta {
-        width: 70%;
+        width:50%;
     }
 
     /* JOIN Page Styles */
@@ -788,7 +806,7 @@ footer {
 
     #discover-content {
         grid-template-columns: 3fr 5fr; 
-        gap: 1rem;
+        gap: 2rem;
       }
     
       #sidebar {
@@ -801,7 +819,6 @@ footer {
       #gallery {
         grid-column: 2; 
         grid-row: 1;    
-        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
       }
 
       #gallery img {
@@ -810,18 +827,18 @@ footer {
 
       @keyframes zoomInOut {
         0% {
-            transform: scale(1); /* Normal size */
+            transform: scale(1); 
         }
         50% {
-            transform: scale(1.03); /* Slight zoom */
+            transform: scale(1.03); 
         }
         100% {
-            transform: scale(1); /* Return to normal size */
+            transform: scale(1); 
         }
     }
 
       #gallery img:hover {
-        animation: zoomInOut 0.5s ease-out; /* Animation duration and easing */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        animation: zoomInOut 0.5s ease-out; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 }

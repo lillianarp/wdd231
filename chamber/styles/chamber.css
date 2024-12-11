@@ -672,13 +672,13 @@ footer {
     text-align: center;
 }
 
-.last-visited h3 {
+/* .last-visited h3 {
     visibility: hidden;
 }
 
 .last-visited h3.dynamic {
     visibility: visible;
-}
+} */
 
 
 
@@ -841,7 +841,7 @@ footer {
     /* DISCOVER Page Styles */
 
     #discover-content {
-        grid-template-columns: 3fr 5fr; 
+        grid-template-columns: 2fr 5fr; 
         gap: 2rem;
       }
     

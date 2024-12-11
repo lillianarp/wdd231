@@ -667,6 +667,14 @@ footer {
     text-align: center;
 }
 
+.last-visited h3 {
+    visibility: hidden;
+}
+
+.last-visited h3.dynamic {
+    visibility: visible;
+}
+
 
 
 /* ================================ */

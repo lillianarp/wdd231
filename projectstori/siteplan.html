@@ -1,4 +1,4 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,22 +11,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="projectstori.css"> 
-    <script src="scripts/.js" defer></script>
+    <link rel="stylesheet" href="styles/projectstori.css"> 
+    <script src="scripts/projectstori.js" defer></script>
 </head>
-<body>
+
+<body id="siteplan">
     <header>
         <div id="header-content">
-            <img id="logo" src="images/logo_200x40.png" alt="Project Stori Logo" width="200" height="40">
+            <div id="logo"><a href="index.html"><img src="images/logo_300x60.png" alt="Project Stori Logo" width="300" height="60"></a></div>
+            
+            <div id="hamburger">
+                ☰
+            </div>
+            
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>Features</li>
-                    <li>Tell Us</li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="siteplan.html" class="active">Site Plan</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main></main>
     <footer></footer>
 </body>

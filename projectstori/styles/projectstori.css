@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 1rem;
+}
+
 body {
     font-family: "Noto Sans Mono", monospace;
     color: #010101;
@@ -16,7 +20,7 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin-bottom: 0.5em;
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
@@ -72,6 +76,15 @@ a:hover {
     background-color: #14443A;
 }
 
+/* Lists */
+ol {
+    margin: 1rem 2rem;
+}
+
+ol li {
+    margin: 1rem 0;
+}
+
 /* Header Styles */
 header {
     color: #010101;
@@ -103,10 +116,11 @@ header {
 nav {
     display: none;
     position: absolute; /* position in the dropdown */
+    z-index: 1000;
     top: 80px;
-    margin: 0 auto;
     background-color: #1D6053;
-    width: 90%;
+    opacity: 0.95;
+    width: 95%;
     padding: 0;
     box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -125,9 +139,15 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0.8rem 1rem;
-    width: 100%;
+    padding: 1rem 0;
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* outline: 1px solid red; */
+    width: 100%;
+    
 }
 
 nav ul li:hover {
@@ -143,17 +163,14 @@ nav a:hover {
     text-decoration: none;
 }
 
-
-/* Main Styles | Site Plan */
-main {
-    width: 95%;
-    margin: 1rem auto;
-}
-
 #hero {
-    width: 100%;
-    max-width: 1200px;
+    position: relative;
+    z-index: 1;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
 }
 
 #hero img {
@@ -162,11 +179,85 @@ main {
     display: block;
 }
 
+article {
+    position: absolute;
+    width: 80%;
+    max-width: 600px;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    transform: translateY(-2rem);
+}
+
+article h1 {
+    line-height: 3rem;
+}
+
+/* Main Styles | Site Plan */
+main {
+    width: 95%;
+    margin: 1rem auto;
+}
+
+.main-content {
+    margin: 3rem auto;
+    width: 95%;
+}
+
+.main-content h2{
+    margin: 1.5rem 0;
+}
+
+.main-content img {
+    display: block;
+    margin: 1rem auto;
+}
+
+.main-content table {
+    margin: 1rem auto;
+    width: 80%;
+}
+
+.main-content table td {
+    padding: 0.5rem;
+    outline: 1px dotted #ccc;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.main-content table th {
+    padding: 0.5rem;
+}
+
+/* Let's Learn BEM! (Block-Element-Modifier) */
+.color-block {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+}
+
+.color-block--light {
+    background-color: #FEFCFD;
+}
+
+.color-block--dark {
+    background-color: #010101;
+} 
+
+.color-block--primary {
+    background-color: #1D6053;
+}
+
+.color-block--highlight {
+    background-color: #E8816E;
+}
+
 /* Footer Styles */
 footer {
-    background-color: #fefcfd;
-    color: #010101;
-    padding: 1em;
+    background-color: #1D6053;
+    color: #FEFCFD;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -220,5 +311,11 @@ footer {
         text-decoration: none;
         color: #1D6053;
         text-shadow: 0px 0px 8px rgba(232, 129, 110, 0.8);
+    }
+
+    article {
+        padding: 2rem;
+        max-width: 700px;
+        transform: translateY(-5rem);
     }
 }

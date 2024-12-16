@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Plan for Website Project | WDD 231</title>
+    <title>Project Stori Feedback Hub | Semester Assgnment WDD231</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Site Plan for Website Project: Project Stori | WDD 231">
+    <meta name="description" content="Feedback Page for The Project Stori Feedback Hub | WDD 231">
     <meta name="author" content="Lillian Arp">
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="The Project Stori Site Plan">
+    <meta property="og:title" content="The Project Stori Feedback Hub">
     <meta property="og:type" content="website">
     <!-- <meta property="og:image" content="https://github.com/lillianarp/wdd231/blob/main/chamber/images/timbuktu_600x799.webp">
     <meta property="og:url" content="https://lillianarp.github.io/wdd231/chamber/index.html"> -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:description" content="The Project Stori Site Plan">
-    <meta property="og:site_name" content="The Project Stori Site Plan">
-    <meta name="twitter:image:alt" content="The Project Stori Site Plan">
+    <meta property="og:description" content="The Project Stori Feedback Hub - Feedback Page">
+    <meta property="og:site_name" content="The Project Stori Feedback Hub - Feedback Page">
+    <meta name="twitter:image:alt" content="The Project Stori Feedback Hub - Feedback Page">
     <meta property="fb:app_id" content="your_app_id">
     <meta name="twitter:site" content="@website-username">
     <!-- Fonts, Styles and Scripts -->
@@ -31,7 +31,9 @@
 <body id="feedback">
     <header>
         <div id="header-content">
-            <div id="logo"><a href="index.html"><img src="images/logo_300x60.png" alt="Project Stori Logo" width="300" height="60"></a></div>
+            <div id="logo">
+                <a href="index.html"><img src="images/logo_300x60.png" alt="Project Stori Logo" width="300" height="60"></a>
+            </div>
             
             <div id="hamburger">
                 ☰
@@ -42,15 +44,123 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="feedback.html" class="active">Feedback</a></li>
-                    <li><a href="siteplan.html">Site Plan</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main>
-        Coming Soon!
+        <section id="main-content">
+        
+            <form action="/submit-feedback" method="POST" class="feedback-form">
+                <fieldset>
+                    <legend>Join the Waitlist and Provide Feedback</legend>
+                    <!-- full name -->
+                    <label for="name">Full Name:</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        aria-required="true">
+
+                    <!-- email address -->
+                    <label for="email">Email Address:</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        aria-required="true">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Help Shape Project Stori</legend>
+                          
+                    <label for="frequency">How often do you create content for social media?</label>
+                        <select id="frequency" name="frequency">
+                            <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="rarely">Rarely</option>
+                        </select>
+                          
+                              <label for="importance">How important is content creation for your personal or business goals?</label>
+                              <select id="importance" name="importance">
+                                <option value="critical">Critical</option>
+                                <option value="very-important">Very Important</option>
+                                <option value="somewhat-important">Somewhat Important</option>
+                                <option value="not-important">Not Important</option>
+                              </select>
+                          
+                              <label for="frustration">What is the most frustrating part of creating content?</label>
+                              <textarea id="frustration" name="frustration" placeholder="Your answer"></textarea>
+                          
+                              <label for="tools">Have you used any tools to help create content? If yes, which ones?</label>
+                              <textarea id="tools" name="tools" placeholder="Your answer"></textarea>
+                          
+                              <label for="value">What feature of Project Stori would you find most valuable?</label>
+                              <select id="value" name="value">
+                                <option value="ai-scripts">AI-generated video scripts</option>
+                                <option value="templates">Social media-ready templates</option>
+                                <option value="journaling">Private journaling with AI feedback</option>
+                                <option value="other">Other (please specify)</option>
+                              </select>
+                              <textarea name="other-feature" placeholder="If other, please specify"></textarea>
+                          
+                              <label for="willingness">How much would you pay for a tool that saves you time and helps you stay consistent?</label>
+                              <select id="willingness" name="willingness">
+                                <option value="0">Nothing</option>
+                                <option value="5-10">$5-$10/month</option>
+                                <option value="11-20">$11-$20/month</option>
+                                <option value="21-50">$21-$50/month</option>
+                                <option value="50+">$50+/month</option>
+                              </select>
+                </fieldset>      
+                <fieldset>      
+                    <legend>Opt in for the newsletter, receive the invitation to join our Beta, etc. </legend>
+                    <label for="name">Something Here:</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        aria-required="true">
+                </fieldset>   
+                    <p>Something here to let them know what will happen after hitting submit.</p>  
+                    <button type="submit">Join the Waitlist</button>
+            </form>
+
+            <div id="feedback-sidebar">
+                <h4>Join the Inner Circle</h4>
+
+                <p>By completing this form, you’ll qualify to receive an invitation to join our Inner Circle—the exclusive group of 100 beta testers who will get early access to Project Stori.</p>
+
+                <p>Here’s what’s in it for you:</p>
+
+                <ul>
+                    <li>Beta Tester Perks: Be among the first to try Project Stori.</li>
+                    <li>Exclusive Discounts: $1 for your first year after completing the beta, plus 50% off annual subscriptions for life.</li>
+                </ul>
+
+                <p><em>Once you receive your invitation, act fast—only 100 spots are available in the Inner Circle!</em></p>
+
+                <p>To qualify, you’ll need to accept your beta invitation when it arrives and complete a short feedback exercise during the testing phase.</p>
+
+                <p>This is your chance to shape the future of content creation—join us and make an impact!</p>
+            </div>
+
+        </section>
+
     </main>
-    <footer></footer>
+
+    <footer>
+        <div class="footer-content">
+           Project Stori Feedback Hub | WDD231 Class Website Project <br>
+            © <span id="currentyear"></span> 🌴 Lillian Arp 🌴  <br>
+            Last Modified: <span id="lastModified"></span>
+        </div>
+    </footer>
 
 </body>
 </html>

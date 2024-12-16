@@ -61,9 +61,9 @@ a:hover {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.75em 1.5em;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    color: #fff;
+    color: #fefcfd;
     background-color: #1D6053;
     border: none;
     border-radius: 0.25em;
@@ -83,6 +83,14 @@ ol {
 
 ol li {
     margin: 1rem 0;
+}
+
+ul {
+    margin: 1rem 2rem;
+}
+
+ul li {
+    margin: 0.5rem 2rem;
 }
 
 /* Header Styles */
@@ -136,6 +144,7 @@ nav ul {
     align-items: center;
     list-style: none;
     gap: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -150,18 +159,29 @@ nav ul li {
     
 }
 
+nav ul li a{
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0;
+    color: #FEFCFD;
+    text-align: center;
+    text-decoration: none;
+}
+
 nav ul li:hover {
     background-color: #010101;
 }
 
 nav a {
-    color: #fff;
+    color: #fefcfd;
     text-align: center;
 }
 
 nav a:hover {
     text-decoration: none;
 }
+
+/* SITE PLAN page */
 
 #hero {
     position: relative;
@@ -183,18 +203,42 @@ article {
     position: absolute;
     width: 80%;
     max-width: 600px;
-    padding: 1rem;
+    padding: 0.9rem;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
     z-index: 2;
-    transform: translateY(-2rem);
+    transform: translateY(0);
+    font-size: 1.1rem;
 }
 
 article h1 {
-    line-height: 3rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
-/* Main Styles | Site Plan */
+.cta-btn {
+    display: inline-block;
+    background-color: #E8816E;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: #010101;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    width: 90%;
+    box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: #1D6053;
+    color: #fefcfd;
+    text-decoration: none;
+}
+
+/* Main Styles */
 main {
     width: 95%;
     margin: 1rem auto;
@@ -236,28 +280,132 @@ figcaption {
     text-align: center;
 }
 
-/* Let's Learn BEM! (Block-Element-Modifier) */
-.color-block {
-    width: 100px;
-    height: 70px;
-    display: inline-block;
+.indent {
+    list-style: none;
+    margin-left: 2rem;
 }
 
-.color-block--light {
-    background-color: #FEFCFD;
+/* FEEDBACK page */
+
+#main-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 2rem;
 }
 
-.color-block--dark {
-    background-color: #010101;
-} 
-
-.color-block--primary {
-    background-color: #1D6053;
+form {
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px dotted #1D6053;
+    border-radius: 4px;
 }
 
-.color-block--highlight {
+legend {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+select:disabled option,
+select option:disabled {
+    color: #fff; 
+    background-color: #474747; 
+}
+
+#features {
+    display: grid;
+    grid-template-columns: 20px auto; 
+    gap: 1rem 0.5rem; 
+    /* outline: 1px dotted red; */
+    margin: 1rem 2rem;
+}
+
+.feature-option {
+    display: contents; 
+}
+
+.feature-option input[type="checkbox"] {
+    justify-self: start; 
+    margin-top: 0.2rem; 
+}
+
+.feature-option label {
+    align-self: center; 
+    font-weight: 400;
+}
+
+/* Opt-in alignment */
+.opt-in {
+    display: grid;
+    grid-template-columns: 20px auto; 
+    gap: 0.5rem; 
+    align-items: center; 
+  }
+  
+  .opt-in input[type="checkbox"] {
+    justify-self: start; 
+    margin-top: 0.1rem; 
+  }
+  
+  .opt-in label {
+    align-self: center; 
+    line-height: 1.4; 
+  }
+
+textarea {
+    grid-column: span 2; /* textarea spans both columns */
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* add STYLEs for REQUIRED fields  */
+
+
+button[type="submit"] {
     background-color: #E8816E;
+    color: #010101;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2rem;
 }
+
+button[type="submit"]:hover {
+    background-color: #1D6053;
+    color: #FEFCFD;
+}
+
+/* SIDEBAR on FEEDBACK PAGE */
+#feedback-sidebar {
+    border: 1px dotted #E8816E;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
 
 /* Footer Styles */
 footer {
@@ -270,7 +418,7 @@ footer {
 /* Media Queries */
 @media (min-width: 768px) {
     body {
-        font-size: 1.2rem; /* Scale font size for larger screens */
+        font-size: 1.1rem; /* Scale font size for larger screens */
     }
 
     h1 { font-size: 2.5rem; }
@@ -300,6 +448,10 @@ footer {
         /* outline: 1px dotted red; */
         padding: 0;
     }
+
+    nav ul li a {
+        color: #010101;
+    }
     
     nav ul li:hover {
         background-color: transparent;
@@ -322,12 +474,32 @@ footer {
     article {
         padding: 2rem;
         max-width: 800px;
-        transform: translateY(-10rem);
+        transform: translateY(-2rem);
+        font-size: 1.5rem;
+    }
+
+    article h1 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    
+    .cta-btn {
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 
     #hero img {
         width: 100vw;
         height: 100%;
         object-fit: cover;
+    }
+
+    /* FEEDBACK PAGE Styles */
+
+    #main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
     }
 }

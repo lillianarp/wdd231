@@ -5,7 +5,8 @@
       "preview": "images/deadlift_300x200.webp",
       "hashtags": ["#GymTips", "#Physiotherapy"],
       "excerpt": "Noticed someone rounding their back while deadlifting. A quick cue: brace your core and keep your chest up.",
-      "private": false
+      "private": false,
+      "content-script": "Deadlifting with a rounded back? That’s asking for an injury. Here’s a quick fix: brace your core like you’re about to take a punch and keep your chest up. This keeps your spine neutral and protects your back. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Family and Fitness",
@@ -13,7 +14,8 @@
       "preview": "images/family-fitness_300x200.webp", 
       "hashtags": ["#Balance", "#StudentLife"],
       "excerpt": "Making time for fitness as a student with a busy family schedule isn’t easy, but it’s essential.",
-      "private": false
+      "private": false,
+      "content-script": "Busy student with a family? Finding time for fitness can feel impossible, but it doesn’t have to be. Start small—10-minute workouts during study breaks or family walks after dinner. It all adds up. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "High-Protein Stir-Fry Idea",
@@ -21,7 +23,8 @@
       "preview": "images/stirfry_300x200.webp",
       "hashtags": ["#HealthyEating", "#MealPrep"],
       "excerpt": "Thinking of a stir-fry with chicken breast, broccoli, and shirataki noodles. High volume, low calorie.",
-      "private": true
+      "private": true,
+      "content-script": " "
     },
     {
       "title": "Posture Tip: Desk Work",
@@ -29,7 +32,8 @@
       "preview": "images/posture_300x200.webp",
       "hashtags": ["#Posture", "#Ergonomics"],
       "excerpt": "Spent 4 hours studying today. Remember: your head weighs ~5kg. Keep it aligned with your spine to avoid strain.",
-      "private": false
+      "private": false,
+      "content-script": "Do you study for hours at a time like I do? Don’t forget—your head weighs about 5kg. If it’s leaning forward, your neck works overtime. Keep your ears in line with your shoulders to avoid strain and stay pain-free. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Protein Pancakes for Breakfast",
@@ -37,7 +41,8 @@
       "preview": "images/pancakes_300x200.webp",
       "hashtags": ["#HealthyBreakfast", "#ProteinBoost"],
       "excerpt": "Recipe idea: oat flour, egg whites, whey protein, and cinnamon. Sweet, filling, and under 300 calories.",
-      "private": false
+      "private": false,
+      "content-script": "Here's a quick, healthy breakfast that's also yummm. Mix oat flour, egg whites, whey protein, and a sprinkle of cinnamon. It’s sweet, filling, and under 300 calories. Perfect for busy mornings.Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "The Power of Rest",
@@ -45,7 +50,8 @@
       "preview": "images/rest_300x200.webp",
       "hashtags": ["#Recovery", "#FitnessTips"],
       "excerpt": "Rest is as important as your workouts. Soreness isn’t a badge of honor; it’s a sign to recover properly.",
-      "private": false
+      "private": false,
+      "content-script": "Soreness doesn't always mean progress. Rest is just as important as your workouts. Soreness isn't a badge of honour. It's your body asking for recovery, so sleep well, hydrate, and take rest days seriously. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Foam Rolling Routine",
@@ -53,7 +59,8 @@
       "preview": "images/rollers_300x200.webp",
       "hashtags": ["#Mobility", "#PhysioTips"],
       "excerpt": "Filmed a quick foam rolling routine for tight hamstrings. Keep it slow and controlled for best results.",
-      "private": false
+      "private": false,
+      "content-script": "Tight hamstrings? Grab a foam roller. Go slow and controlled — focus on the back of your thighs, pausing on any tight spots. It’s simple, effective, and keeps your legs feeling loose. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Progress Is Personal",
@@ -61,7 +68,8 @@
       "preview": "images/progress_300x200.webp",
       "hashtags": ["#Motivation", "#FitnessJourney"],
       "excerpt": "Progress looks different for everyone. Don’t compare your chapter 1 to someone else’s chapter 10.",
-      "private": true
+      "private": true,
+      "content-script": " "      
     },
     {
       "title": "Proper Lifting Warm-Up",
@@ -69,7 +77,8 @@
       "preview": "images/warmup_300x200.webp",
       "hashtags": ["#StrengthTraining", "#WarmUpTips"],
       "excerpt": "Always warm up before lifting. Think dynamic stretches: lunges, arm swings, and hip openers.",
-      "private": false
+      "private": false,
+      "content-script": "Before you lift, always warm up. Skip the static stretches—think dynamic moves like lunges, arm swings, and hip openers. It preps your muscles and joints, so you lift safer and stronger. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Mindful Eating Habits",
@@ -77,7 +86,8 @@
       "preview": "images/mindfuleating_300x200.webp",
       "hashtags": ["#Nutrition", "#HealthyHabits"],
       "excerpt": "Had a moment of mindless snacking today. Reminder: eat without distractions, savor your food, and listen to your body.",
-      "private": true
+      "private": true,
+      "content-script": " "
     },
     {
       "title": "Weekend Gym Vibes",
@@ -85,7 +95,8 @@
       "preview": "images/gymlife_300x200.webp",
       "hashtags": ["#WeekendWorkout", "#FitnessLifestyle"],
       "excerpt": "Shot a quick video of my favorite exercises from today’s workout: deadlifts, chin-ups, and sled pushes.",
-      "private": false
+      "private": false,
+      "content-script": "Sharing my top three exercises from today’s workout: deadlifts for strength, chin-ups for upper body power, and sled pushes for killer conditioning. Give them a try! And follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Foam Rolling for Calves",
@@ -93,7 +104,8 @@
       "preview": "images/calves_300x200.webp",
       "hashtags": ["#Mobility", "#Recovery"],
       "excerpt": "Quick tip: when foam rolling calves, focus on slow, controlled movements. Stop on tight spots and breathe.",
-      "private": true
+      "private": true,
+      "content-script": " "
     },
     {
       "title": "Low-Calorie Protein Mug Cake",
@@ -101,7 +113,8 @@
       "preview": "images/mugcake_300x200.webp",
       "hashtags": ["#Dessert", "#HealthyEating"],
       "excerpt": "Wrote down a protein mug cake recipe: whey protein, cocoa powder, almond milk, and a bit of stevia.",
-      "private": true
+      "private": true,
+      "content-script": " "
     },
     {
       "title": "The Importance of Mobility",
@@ -109,7 +122,8 @@
       "preview": "images/mobility_300x200.webp",
       "hashtags": ["#Physiotherapy", "#Mobility"],
       "excerpt": "Mobility isn’t flexibility. It’s strength in motion. Work on it to prevent injuries and improve movement quality.",
-      "private": false
+      "private": false,
+      "content-script": "Mobility isn’t just flexibility—it’s strength in motion. The better your mobility, the better you move and the fewer injuries you’ll face. Prioritize it to lift stronger and live pain-free. Follow for more health & fitness tips from your favourite physio guy."
     },
     {
       "title": "Shoulder Warm-Up Routine",
@@ -117,7 +131,8 @@
       "preview": "images/shoulder_300x200.webp",
       "hashtags": ["#WarmUp", "#Mobility"],
       "excerpt": "Filmed a warm-up for shoulder health: band pull-aparts, shoulder taps, and external rotations.",
-      "private": false
+      "private": false,
+      "content-script": "Keeping your shoulders healthy? Start with this warm-up: band pull-aparts, shoulder taps, and external rotations. Simple moves to build strength and stability where it counts. Follow for more health & fitness tips from your favourite physio guy."
     }
   ]
   

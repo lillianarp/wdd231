@@ -16,6 +16,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
+let entries = [];
 
 // Grab Data from the JSON File - Journal Entries
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Entries container found!");
         fetch("jake-journal-entries.json")
             .then((response) => response.json())
-            .then((entries) => {
+            .then((data) => {
+                entries = data;
                 // Let's loop through entries 
                 entries.forEach((entry) => {
                     const gridItem = document.createElement("div");
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p>${entry.hashtags.map((tag) => `${tag}`).join(" ")}</p>
                         <p>${entry.excerpt}</p>
                         <button class="simulate-button" data-title="${entry.title}">
-                            Simulate Post
+                            Generate Content
                         </button>
                     `;
                     container.appendChild(gridItem);
@@ -48,6 +50,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }  
 });
 
+// fun with modals 
+console.log(entries);
+
+const modal = document.getElementById("modal");
+const modalDialogue = document.getElementById("modal-dialogue");
+const modalButtons = document.getElementById("modal-buttons");
+
+// even listener for the 'Generate Content' click
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("simulate-button")) {
+        const title = event.target.getAttribute("data-title");
+        const entry = entries.find(e => e.title === title);
+
+        if (entry) {
+            modal.showModal();
+
+            if (entry.private) {
+                modalDialogue.innerHTML = `<p>You've chosen to keep this post private.</p>`;
+                modalButtons.innerHTML = `<button class="close-modal-btn">Close</button>`;
+            } else {
+                // fake AI dialogue for public posts
+                modalDialogue.innerHTML = `
+                    <p>This journal entry would make a great social media post. Would you like me to generate a script?</p>
+                `;
+                modalButtons.innerHTML = `
+                    <button id="wing-it-btn">No thank you, I'll wing it.</button>
+                    <button id="generate-btn">Yes, please!</button>
+                `;
+
+                // button listeners for user response
+                document.getElementById("wing-it-btn").addEventListener("click", () => {
+                    modalDialogue.innerHTML = `<p>Great! Click below to start recording your voiceover.</p>`;
+                    modalButtons.innerHTML = `<button class="record-btn close-modal-btn">Record Your Voiceover</button>`;
+                });
+
+                document.getElementById("generate-btn").addEventListener("click", () => {
+                    modalDialogue.innerHTML = `
+                        <p>Here's a quick 15-second script:</p>
+                        <p>"${entry['content-script']}"</p>
+                        <p>Close this screen and use your editor to tweak the script!</p>
+                    `;
+                    modalButtons.innerHTML = `<button class="close-modal-btn">Close</button>`;
+                });
+            }
+        }
+    }
+
+    // listen to close the modal
+    if (
+        event.target.classList.contains("close-modal") ||
+        event.target.classList.contains("close-modal-btn")
+    ) {
+        modal.close();
+    }
+});
 
 
 // FOOTER: Year & Last Modified Date

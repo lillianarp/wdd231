@@ -381,7 +381,7 @@ textarea {
     font-size: 1rem;
 }
 
-/* add STYLEs for REQUIRED fields  */
+/* add STYLEs for REQUIRED fields here  */
 
 
 button[type="submit"] {
@@ -407,6 +407,61 @@ button[type="submit"]:hover {
 }
 
 
+/* FEATURES Page Styling */
+
+/* GRID / LIST of Entries */
+#entries-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+}
+
+.grid-item {
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background: #fff; /* White background for contrast */
+    max-width: 100%; /* Keep items a good size */
+    margin: 0 auto; /* Center items */
+    text-align: center; /* Center content inside each item */
+  }
+  
+  .grid-item img {
+    max-width: 100%; /* Ensure images fit inside the item */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .grid-item h3 {
+    font-size: 1rem;
+    height: auto;
+  }
+  
+  .grid-item p {
+    font-size: 0.8em;
+    color: #666;
+    margin: 8px;
+  }
+  
+  .grid-item button {
+    display: inline-block;
+    margin: 8px auto;
+    padding: 8px 16px;
+    font-size: 0.8em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .grid-item button:hover {
+    background-color: #0056b3;
+  }
+
+
 /* Footer Styles */
 footer {
     background-color: #1D6053;
@@ -416,7 +471,13 @@ footer {
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablet view */
+}
+
+
+@media (min-width: 600px) {
     body {
         font-size: 1.1rem; /* Scale font size for larger screens */
     }
@@ -495,8 +556,32 @@ footer {
         object-fit: cover;
     }
 
-    /* FEEDBACK PAGE Styles */
+    /* FEATURE PAGE Styles */
+    #entries-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+        gap: 1rem; /* Restore larger gaps */
+        padding: 1rem; /* Restore larger padding */
+    }
 
+    .grid-item {
+        max-width: 300px; /* Restrict max width for desktop */
+    }
+
+    .grid-item h3 {
+        font-size: 1.2em; /* Slightly larger fonts for desktop */
+    }
+
+    .grid-item p {
+        font-size: 0.9em; /* Restore larger paragraph font size */
+    }
+
+    .grid-item button {
+        font-size: 0.9em; /* Restore larger button font size */
+        width: auto; /* Let buttons adjust naturally */
+    }
+
+
+    /* FEEDBACK PAGE Styles */
     #main-content {
         display: grid;
         grid-template-columns: 2fr 1fr;

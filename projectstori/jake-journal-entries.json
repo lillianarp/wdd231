@@ -2,7 +2,7 @@
     {
       "title": "Deadlift Technique Observation",
       "type": "Text",
-      "preview": "assets/deadlift.png",
+      "preview": "images/deadlift_300x200.webp",
       "hashtags": ["#GymTips", "#Physiotherapy"],
       "excerpt": "Noticed someone rounding their back while deadlifting. A quick cue: brace your core and keep your chest up.",
       "private": false
@@ -10,7 +10,7 @@
     {
       "title": "Family and Fitness",
       "type": "Text",
-      "preview": "assets/family-fitness.png",
+      "preview": "images/family-fitness_300x200.webp", 
       "hashtags": ["#Balance", "#StudentLife"],
       "excerpt": "Making time for fitness as a student with a busy family schedule isn’t easy, but it’s essential.",
       "private": false
@@ -18,7 +18,7 @@
     {
       "title": "High-Protein Stir-Fry Idea",
       "type": "Text",
-      "preview": "assets/stirfry.png",
+      "preview": "images/stirfry_300x200.webp",
       "hashtags": ["#HealthyEating", "#MealPrep"],
       "excerpt": "Thinking of a stir-fry with chicken breast, broccoli, and shirataki noodles. High volume, low calorie.",
       "private": true
@@ -26,7 +26,7 @@
     {
       "title": "Posture Tip: Desk Work",
       "type": "Text",
-      "preview": "assets/posture.png",
+      "preview": "images/posture_300x200.webp",
       "hashtags": ["#Posture", "#Ergonomics"],
       "excerpt": "Spent 4 hours studying today. Remember: your head weighs ~5kg. Keep it aligned with your spine to avoid strain.",
       "private": false
@@ -34,7 +34,7 @@
     {
       "title": "Protein Pancakes for Breakfast",
       "type": "Text",
-      "preview": "assets/protein-pancakes.png",
+      "preview": "images/pancakes_300x200.webp",
       "hashtags": ["#HealthyBreakfast", "#ProteinBoost"],
       "excerpt": "Recipe idea: oat flour, egg whites, whey protein, and cinnamon. Sweet, filling, and under 300 calories.",
       "private": false
@@ -42,7 +42,7 @@
     {
       "title": "The Power of Rest",
       "type": "Text",
-      "preview": "assets/rest.png",
+      "preview": "images/rest_300x200.webp",
       "hashtags": ["#Recovery", "#FitnessTips"],
       "excerpt": "Rest is as important as your workouts. Soreness isn’t a badge of honor; it’s a sign to recover properly.",
       "private": false
@@ -50,7 +50,7 @@
     {
       "title": "Foam Rolling Routine",
       "type": "Video",
-      "preview": "assets/foam-rolling.png",
+      "preview": "images/rollers_300x200.webp",
       "hashtags": ["#Mobility", "#PhysioTips"],
       "excerpt": "Filmed a quick foam rolling routine for tight hamstrings. Keep it slow and controlled for best results.",
       "private": false
@@ -58,7 +58,7 @@
     {
       "title": "Progress Is Personal",
       "type": "Text",
-      "preview": "assets/progress.png",
+      "preview": "images/progress_300x200.webp",
       "hashtags": ["#Motivation", "#FitnessJourney"],
       "excerpt": "Progress looks different for everyone. Don’t compare your chapter 1 to someone else’s chapter 10.",
       "private": true
@@ -66,7 +66,7 @@
     {
       "title": "Proper Lifting Warm-Up",
       "type": "Text",
-      "preview": "assets/warmup.png",
+      "preview": "images/warmup_300x200.webp",
       "hashtags": ["#StrengthTraining", "#WarmUpTips"],
       "excerpt": "Always warm up before lifting. Think dynamic stretches: lunges, arm swings, and hip openers.",
       "private": false
@@ -74,7 +74,7 @@
     {
       "title": "Mindful Eating Habits",
       "type": "Text",
-      "preview": "assets/mindful-eating.png",
+      "preview": "images/mindfuleating_300x200.webp",
       "hashtags": ["#Nutrition", "#HealthyHabits"],
       "excerpt": "Had a moment of mindless snacking today. Reminder: eat without distractions, savor your food, and listen to your body.",
       "private": true
@@ -82,7 +82,7 @@
     {
       "title": "Weekend Gym Vibes",
       "type": "Video",
-      "preview": "assets/gym-vibes.mp4",
+      "preview": "images/gymlife_300x200.webp",
       "hashtags": ["#WeekendWorkout", "#FitnessLifestyle"],
       "excerpt": "Shot a quick video of my favorite exercises from today’s workout: deadlifts, chin-ups, and sled pushes.",
       "private": false
@@ -90,7 +90,7 @@
     {
       "title": "Foam Rolling for Calves",
       "type": "Video",
-      "preview": "assets/rolling-calves.mp4",
+      "preview": "images/calves_300x200.webp",
       "hashtags": ["#Mobility", "#Recovery"],
       "excerpt": "Quick tip: when foam rolling calves, focus on slow, controlled movements. Stop on tight spots and breathe.",
       "private": true
@@ -98,7 +98,7 @@
     {
       "title": "Low-Calorie Protein Mug Cake",
       "type": "Text",
-      "preview": "assets/mug-cake.png",
+      "preview": "images/mugcake_300x200.webp",
       "hashtags": ["#Dessert", "#HealthyEating"],
       "excerpt": "Wrote down a protein mug cake recipe: whey protein, cocoa powder, almond milk, and a bit of stevia.",
       "private": true
@@ -106,7 +106,7 @@
     {
       "title": "The Importance of Mobility",
       "type": "Text",
-      "preview": "assets/mobility.png",
+      "preview": "images/mobility_300x200.webp",
       "hashtags": ["#Physiotherapy", "#Mobility"],
       "excerpt": "Mobility isn’t flexibility. It’s strength in motion. Work on it to prevent injuries and improve movement quality.",
       "private": false
@@ -114,7 +114,7 @@
     {
       "title": "Shoulder Warm-Up Routine",
       "type": "Video",
-      "preview": "assets/shoulder-warmup.mp4",
+      "preview": "images/shoulder_300x200.webp",
       "hashtags": ["#WarmUp", "#Mobility"],
       "excerpt": "Filmed a warm-up for shoulder health: band pull-aparts, shoulder taps, and external rotations.",
       "private": false

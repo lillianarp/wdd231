@@ -124,6 +124,23 @@ modal.addEventListener("click", (event) => {
     }
 });
 
+// Form stuff and thankyou.html page 
+import { saveFormDataToLocalStorage } from '.form-utils.mjs';
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.id === "feedback") { // check we're on the right page
+        const form = document.querySelector(".feedback-form"); 
+    
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); 
+                saveFormDataToLocalStorage(form);
+                window.location.href = "thankyou.html";
+            });
+        }
+    }
+});
+
 
 // FOOTER: Year & Last Modified Date
 function updateFooter() {

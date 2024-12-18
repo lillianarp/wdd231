@@ -78,7 +78,7 @@ a:hover {
 
 /* Lists */
 ol {
-    margin: 1rem 4rem;
+    margin: 0.5rem 4rem;
 }
 
 ol li {
@@ -86,7 +86,7 @@ ol li {
 }
 
 ul {
-    margin: 1rem 2rem;
+    margin: 0.5rem 2rem;
 }
 
 ul li {
@@ -99,6 +99,8 @@ header {
     padding: 1rem;
     margin: 0;
     text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); 
+    /* border-bottom: 1px dotted #ccc; */
 }
 
 #header-content {
@@ -186,50 +188,59 @@ nav a:hover {
 #hero {
     position: relative;
     z-index: 1;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
+    margin: 0;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
 }
 
-#hero img {
-    max-width: 100%;
-    height: auto;
+picture img {
     display: block;
+    width: 100%;
+    height: 100%; 
+    margin: 0 auto;
+    object-fit: cover;
 }
 
 article {
     position: absolute;
-    width: 80%;
-    max-width: 600px;
-    padding: 0.9rem;
+    top:10%;
+    left: 10%;
+    /* transform: translateY(-30%, -30%); */
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+    padding: 1rem;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     z-index: 2;
-    transform: translateY(0);
     font-size: 1.1rem;
+    box-sizing: border-box;
 }
 
 article h1 {
     font-size: 1.5rem;
     line-height: 2rem;
+    margin-bottom: 1rem;
 }
 
 .cta-btn {
     display: inline-block;
+    width: 90%;
+    max-width: 400px;
+    padding: 0.75rem;
+    margin: 1rem auto 2rem auto;
     background-color: #E8816E;
-    border-radius: 4px;
-    padding: 0.5rem;
     color: #010101;
+    text-align: center;
+    text-decoration: none;
     font-size: 1.3rem;
     font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    width: 90%;
+    border-radius: 4px;
     box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
 .cta-btn:hover {
@@ -237,6 +248,39 @@ article h1 {
     color: #fefcfd;
     text-decoration: none;
 }
+
+#feature-overview {
+    display: grid;
+    margin: 0;
+}
+
+/* a 'wiggle' effect */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); } 
+    25% { transform: rotate(1deg); }    
+    50% { transform: rotate(-1deg); }   
+    75% { transform: rotate(1deg); }   
+  }
+  
+  /* Style for the CTA blurb */
+  .cta-blurb {
+    display: inline-block; 
+    max-width: 90%;
+    padding: 1.5rem;
+    margin: 1rem auto 2rem auto;
+    border: 2px solid #333; 
+    border-radius: 6px; 
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out; 
+    animation: wiggle 0.8s ease-in-out; 
+  }
+  
+  /* Optional hover effect */
+  .cta-blurb:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  }
 
 /* Main Styles */
 main {
@@ -410,27 +454,42 @@ button[type="submit"]:hover {
 /* FEATURES Page Styling */
 
 /* GRID / LIST of Entries */
+
+.journal-sim {
+    background-color: #eee;
+    padding: 1rem 0;
+    border-radius: 6px;
+}
+
+.journal-sim h4 {
+    padding: 0;
+    margin: 0 1.5rem;
+}
+
 #entries-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
 }
 
 .grid-item {
-    border: 1px solid #ccc; /* Add a light border */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Prevent content overflow */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background: #fff; /* White background for contrast */
-    max-width: 100%; /* Keep items a good size */
-    margin: 0 auto; /* Center items */
-    text-align: center; /* Center content inside each item */
+    border: 1px solid #eee; 
+    border-radius: 6px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
   }
   
   .grid-item img {
-    max-width: 100%; /* Ensure images fit inside the item */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 6px;
   }
   
   .grid-item h3 {
@@ -447,27 +506,33 @@ button[type="submit"]:hover {
   .grid-item button {
     display: inline-block;
     margin: 8px auto;
-    padding: 8px 16px;
-    font-size: 0.8em;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: #fff;
-    background-color: #007bff;
+    background-color: #1D6053;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    max-width: 90%;
   }
   
   .grid-item button:hover {
-    background-color: #0056b3;
+    background-color: #E8816E;
+    color: #010101;
   }
 
-  /* General Modal Styling */
+  /* Features.html Modal Styles */
 dialog#modal {
     border: none; /* Remove default browser dialog border */
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 400px;
+    border-radius: 6px;
+    padding: 1.5rem;
+    max-width: 800px;
     width: 90%;
+    max-height: 800px;
+    height: 60%;
+    margin: 5rem auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     color: #333;
@@ -475,56 +540,68 @@ dialog#modal {
     animation: fadeIn 0.3s ease-in-out; /* Smooth modal animation */
 }
 
-/* Modal Content Wrapper */
 .modal-content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 1rem;
     justify-content: center;
+    height: 100%;
     position: relative;
+    border-radius: 6px;
+    outline: 1px dotted #ccc;
+    padding: 2rem;
 }
 
 /* Close Button */
 button.close-modal {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #666;
-    cursor: pointer;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    top: 0.5rem;
+    right: 1rem;
+    font-weight: bold;
+    color: #9b0808;
+    cursor: pointer;
     transition: color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button.close-modal:hover {
-    color: #000;
+    color: #010101;
 }
 
 /* Modal Dialogue */
 #modal-dialogue {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 10px;
-    color: #444;
+    margin: 4rem 0.5rem 1rem 0.5rem;
+    color: #010101;
+    padding: 1rem;
 }
 
 /* Modal Buttons Container */
 #modal-buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 1rem;
     margin-top: 10px;
 }
 
 /* Button Styles */
-#modal-buttons button {
-    padding: 8px 16px;
+button {
+    padding: 1rem 1rem;
     font-size: 0.9rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -538,13 +615,14 @@ button.close-modal:hover {
     background-color: #ccc;
 }
 
-#modal-buttons button:last-child {
-    background-color: #4CAF50; /* Green primary button */
+button.record-btn, #modal-buttons button:last-child {
+    background-color: #1D6053; 
     color: #fff;
 }
 
-#modal-buttons button:last-child:hover {
-    background-color: #45a049;
+button.record-btn:hover, #modal-buttons button:last-child:hover {
+    background-color: #E8816E;
+    color: #010101;
 }
 
 /* Animation */
@@ -564,8 +642,6 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
-
-
 /* Footer Styles */
 footer {
     background-color: #1D6053;
@@ -577,11 +653,75 @@ footer {
 /* Media Queries */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    
+    nav {
+        display: block;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        /* outline: 1px dotted red; */
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        /* outline: 1px dotted red; */
+        padding: 0;
+    }
+
+    nav ul li a {
+        color: #010101;
+    }
+    
+    nav ul li:hover {
+        background-color: transparent;
+    }
+
+    nav a {
+        color: #010101;
+        margin: 0 0.5em;
+        text-decoration: none;
+        transition: text-shadow 0.3s ease, color 0.3s ease;
+    }
+    
+    nav a:hover,
+    nav a.active {
+        text-decoration: none;
+        color: #010101;
+        text-shadow: 0px 0px 8px rgba(232, 129, 110, 0.8);
+    }
+
+    #hamburger {
+        display: none;
+    }
     /* Styles for tablet view */
+
+    #entries-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; /* Restore larger gaps */
+        padding: 1.5rem 2rem; /* Restore larger padding */
+    }
+
+    .grid-item {
+        max-width: 400px; /* Restrict max width for desktop */
+    }
+
+    .grid-item h3 {
+        font-size: 1.2em; /* Slightly larger fonts for desktop */
+    }
+
+    .grid-item p {
+        font-size: 0.9em; /* Restore larger paragraph font size */
+    }
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
     body {
         font-size: 1.1rem; /* Scale font size for larger screens */
     }
@@ -637,28 +777,17 @@ footer {
     }
 
     article {
-        padding: 2rem;
-        max-width: 800px;
+        top: 20%;
+        left: 20%;
+        max-width: 60%;
         transform: translateY(-2rem);
-        font-size: 1.5rem;
     }
-
-    article h1 {
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-
     
     .cta-btn {
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-size: 1.3rem;
+        font-weight: 600;
     }
 
-    #hero img {
-        width: 100vw;
-        height: 100%;
-        object-fit: cover;
-    }
 
     /* FEATURE PAGE Styles */
     #entries-container {
@@ -668,7 +797,7 @@ footer {
     }
 
     .grid-item {
-        max-width: 300px; /* Restrict max width for desktop */
+        max-width: 500px; /* Restrict max width for desktop */
     }
 
     .grid-item h3 {
@@ -680,8 +809,7 @@ footer {
     }
 
     .grid-item button {
-        font-size: 0.9em; /* Restore larger button font size */
-        width: auto; /* Let buttons adjust naturally */
+        font-size: 1.2rem; /* Restore larger button font size */
     }
 
 

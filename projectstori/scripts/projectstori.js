@@ -19,36 +19,41 @@ document.addEventListener('click', (event) => {
 let entries = [];
 
 // Grab Data from the JSON File - Journal Entries
-document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("entries-container"); // make sure we target the id on features.html
+document.addEventListener("DOMContentLoaded", async () => {
+    const container = document.getElementById("entries-container");
     if (container) {
-        console.log("Entries container found!");
-        fetch("jake-journal-entries.json")
-            .then((response) => response.json())
-            .then((data) => {
-                entries = data;
-                // Let's loop through entries 
-                entries.forEach((entry) => {
-                    const gridItem = document.createElement("div");
-                    gridItem.classList.add("grid-item");
-                    // Add content to the grid
-                    gridItem.innerHTML = `
-                        <img src="${entry.preview}" alt="${entry.title}">
-                        <h3>${entry.title}</h3>
-                        <p>${entry.hashtags.map((tag) => `${tag}`).join(" ")}</p>
-                        <p>${entry.excerpt}</p>
-                        <button class="simulate-button" data-title="${entry.title}">
-                            Generate Content
-                        </button>
-                    `;
-                    container.appendChild(gridItem);
-                });
-            })
-            .catch((error) => console.error("Error fetching JSON:", error));
-    } else {
-        console.log("Entries container not found on this page.");
-    }  
+        const url = "jake-journal-entries.json";
+        entries = await fetchJournalEntries(url); // already declared above
+        displayJournalEntries(entries, container);
+    }
 });
+
+async function fetchJournalEntries(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! Status ${response.status}`);
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching JSON:", error);
+        return [];
+    }
+}
+
+function displayJournalEntries(entries, container) {
+    entries.forEach(entry => {
+        const gridItem = document.createElement("div");
+        gridItem.classList.add("grid-item");
+        gridItem.innerHTML = `
+            <img src="${entry.preview}" alt="${entry.title}">
+            <h3>${entry.title}</h3>
+            <p>${entry.hashtags.map(tag => `${tag}`).join(" ")}</p>
+            <p>${entry.excerpt}</p>
+            <button class="simulate-button" data-title="${entry.title}">Generate Content</button>
+        `;
+        container.appendChild(gridItem);
+    });
+}
+
 
 // fun with modals 
 console.log(entries);
@@ -67,12 +72,13 @@ document.addEventListener("click", (event) => {
             modal.showModal();
 
             if (entry.private) {
-                modalDialogue.innerHTML = `<p>You've chosen to keep this post private.</p>`;
+                modalDialogue.innerHTML = `<p>You've chosen to keep this post private.</p> <p>If you would like to share this post on social media, please go back and change its privacy settings.</p>`;
                 modalButtons.innerHTML = `<button class="close-modal-btn">Close</button>`;
             } else {
                 // fake AI dialogue for public posts
                 modalDialogue.innerHTML = `
-                    <p>This journal entry would make a great social media post. Would you like me to generate a script?</p>
+                    <p>This journal entry would make a great social media post.</p> 
+                    <p>Would you like me to generate a script?</p>
                 `;
                 modalButtons.innerHTML = `
                     <button id="wing-it-btn">No thank you, I'll wing it.</button>
@@ -89,9 +95,14 @@ document.addEventListener("click", (event) => {
                     modalDialogue.innerHTML = `
                         <p>Here's a quick 15-second script:</p>
                         <p>"${entry['content-script']}"</p>
-                        <p>Close this screen and use your editor to tweak the script!</p>
+                        <div id="modal-actions">
+                            <button class="record-btn close-modal-btn">Record Your Voiceover</button>
+                        </div>
+                        <p>Or close this screen and use your editor to tweak the script!</p>
                     `;
-                    modalButtons.innerHTML = `<button class="close-modal-btn">Close</button>`;
+
+                    // Clear modalButtons (optional)
+                    modalButtons.innerHTML = ``;
                 });
             }
         }
@@ -106,10 +117,19 @@ document.addEventListener("click", (event) => {
     }
 });
 
+// also close modal by clicking outside the modal-content
+modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.close();
+    }
+});
+
 
 // FOOTER: Year & Last Modified Date
-const currentYear = new Date().getFullYear();
-document.getElementById("currentyear").textContent = currentYear;
-
-const lastModified = document.lastModified;
-document.getElementById("lastModified").textContent = lastModified;
+function updateFooter() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById("currentyear").textContent = currentYear;
+    const lastModified = document.lastModified;
+    document.getElementById("lastModified").textContent = lastModified;
+}
+updateFooter();

@@ -185,8 +185,6 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* SITE PLAN page */
-
 #hero {
     position: relative;
     margin: 0;
@@ -222,6 +220,48 @@ article h1 {
     width: 60%;
     text-align: center;
     filter: drop-shadow(0.3rem 0.3rem 8px #010101); 
+}
+
+/* HOME PAGE FORMATTING */
+.intro {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    /* outline: 1px dotted red; */
+    padding: 1.5rem;
+    border-radius: 6px;
+    background-color: #f8f5ed;
+}
+
+.highlight-stori {
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 2rem;
+    background-color: #f8eae3; 
+    padding: 3rem 0; 
+}
+
+.highlight-blurb {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.highlight-stori h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #010101;
+    padding: 1rem;
+}
+
+.highlight-blurb p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    color: #010101;
 }
 
 .cta-btn {
@@ -265,7 +305,7 @@ article h1 {
   .cta-blurb {
     max-width: 95%;
     padding: 1.5rem;
-    margin: 1rem auto 2rem auto;
+    margin: 2rem auto 2rem auto;
     border: 2px solid #333; 
     border-radius: 6px; 
     text-align: center;
@@ -681,8 +721,8 @@ footer {
     #hamburger {
         display: none;
     }
-    /* Styles for tablet view */
 
+    /* Styles for tablet view */
     #entries-container {
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem; 
@@ -700,6 +740,15 @@ footer {
     .grid-item p {
         font-size: 1rem; 
         color:#010101
+    }
+
+    .intro {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .highlight-blurb {
+        grid-template-columns: 1fr 1fr; 
+        gap: 3rem; 
     }
 }
 
@@ -759,8 +808,6 @@ footer {
         text-shadow: 0px 0px 8px rgba(232, 129, 110, 0.8);
     }
 
-    
-
     /* FEATURE PAGE Styles */
     #entries-container {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
@@ -784,6 +831,14 @@ footer {
         font-size: 1.2rem; /* Restore larger button font size */
     }
 
+    .intro {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .highlight-blurb {
+        grid-template-columns: 1fr 1fr; 
+        gap: 3rem; 
+    }
 
     /* FEEDBACK PAGE Styles */
     #main-content {

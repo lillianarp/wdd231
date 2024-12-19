@@ -1,19 +1,30 @@
 // toggle the hamburger
-const hamburger = document.getElementById('hamburger');
-const nav = document.querySelector('nav');
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('nav');
 
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('open');
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        // close the menu by clicking away from it
+        document.addEventListener('click', (event) => {
+            const isClickInNav = nav.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+
+            if (!isClickInNav && !isClickOnHamburger) {
+                nav.classList.remove('open');
+            }
+        });
+    } else {
+        console.error("Hamburger menu not found. Where is it?");
+    }
 });
 
-// close the menu by clicking away from it
-document.addEventListener('click', (event) => {
-    const isClickInNav = nav.contains(event.target);
-    const isClickOnHamburger = hamburger.contains(event.target);
-
-    if (!isClickInNav && !isClickOnHamburger) {
-        nav.classList.remove('open');
-    }
+hamburger.addEventListener('click', () => {
+    console.log("Hamburger clicked!"); // Check if this logs to the console
+    nav.classList.toggle('open');
 });
 
 let entries = [];
@@ -121,23 +132,6 @@ document.addEventListener("click", (event) => {
 modal.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.close();
-    }
-});
-
-// Form stuff and thankyou.html page 
-import { saveFormDataToLocalStorage } from '.form-utils.mjs';
-
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.body.id === "feedback") { // check we're on the right page
-        const form = document.querySelector(".feedback-form"); 
-    
-        if (form) {
-            form.addEventListener("submit", (event) => {
-                event.preventDefault(); 
-                saveFormDataToLocalStorage(form);
-                window.location.href = "thankyou.html";
-            });
-        }
     }
 });
 

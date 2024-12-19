@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/projectstori.css"> 
-    <script type="module" defer src="projectstori.js"></script>
+    <script type="module" defer src="scripts/projectstori.js"></script>
 </head>
 
 <body id="feedback">
@@ -35,7 +35,7 @@
                 <a href="index.html"><img src="images/logo_300x60.png" alt="Project Stori Logo" width="300" height="60"></a>
             </div>
             
-            <div id="hamburger">
+            <div id="hamburger" role="button" tabindex="0">
                 ☰
             </div>
             
@@ -50,17 +50,18 @@
     </header>
 
     <main>
+        <h1>Send Us Your Feedback</h1>
         <section id="main-content">
-        
             <form action="thankyou.html" method="POST" class="feedback-form">
                 <fieldset>
-                    <legend>Join the Waitlist and Provide Feedback</legend>
+                    <legend>Your Details</legend>
                     <!-- full name -->
                     <label for="name">Full Name:</label>
                     <input 
                         type="text" 
                         id="name" 
                         name="name" 
+                        autocomplete="name"
                         required
                         aria-required="true">
 
@@ -69,65 +70,74 @@
                     <input 
                         type="email" 
                         id="email" 
-                        name="email" 
+                        name="email"
+                        autocomplete="email" 
                         required
                         aria-required="true">
+                    
+                    <!-- importance -->
+                    <label for="importance">How important is content creation for your personal or business goals?</label>
+                    <select id="importance" name="importance" required>
+                        <option value="critical">Critical</option>
+                        <option value="very-important">Very Important</option>
+                        <option value="somewhat-important">Somewhat Important</option>
+                        <option value="not-important">Not Important</option>
+                    </select>   
+
+                    <!-- challenges -->
+                    <label for="challenges">What's your biggest challenge with creating content?</label>
+                        <textarea id="challenges" name="challenges" placeholder="Your answer"></textarea>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Help Shape Project Stori</legend>
-                          
-                    <label for="frequency">How often do you create content for social media?</label>
-                        <select id="frequency" name="frequency">
-                            <option value="daily">Daily</option>
-                                <option value="weekly">Weekly</option>
-                                <option value="monthly">Monthly</option>
-                                <option value="rarely">Rarely</option>
+                    <legend>Your Project Stori Feedback</legend>
+                    <label for="value">What Project Stori feature would you find most useful?</label>
+                        <select id="value" name="value" required>
+                            <option value="journaling">The AI can help me express my complex thoughts</option>
+                            <option value="strategy">I can set it to follow my own content strategy</option>
+                            <option value="ai-scripts">The AI can generate video scripts for me</option>
+                            <option value="converting">It can automatically convert my journal entries into video</option>
+                            <option value="integration">It easily integrates with social media platforms</option>
+                            <option value="other">Other (please specify)</option>
                         </select>
+                    <textarea name="other-feature" placeholder="If other, please specify"></textarea> 
+
+                    <label for="suggestions">What is something else you'd like this tool to do?</label>
+                        <textarea id="challenges" name="suggestions" placeholder="Your answer"></textarea>
                           
-                              <label for="importance">How important is content creation for your personal or business goals?</label>
-                              <select id="importance" name="importance">
-                                <option value="critical">Critical</option>
-                                <option value="very-important">Very Important</option>
-                                <option value="somewhat-important">Somewhat Important</option>
-                                <option value="not-important">Not Important</option>
-                              </select>
-                          
-                              <label for="frustration">What is the most frustrating part of creating content?</label>
-                              <textarea id="frustration" name="frustration" placeholder="Your answer"></textarea>
-                          
-                              <label for="tools">Have you used any tools to help create content? If yes, which ones?</label>
-                              <textarea id="tools" name="tools" placeholder="Your answer"></textarea>
-                          
-                              <label for="value">What feature of Project Stori would you find most valuable?</label>
-                              <select id="value" name="value">
-                                <option value="ai-scripts">AI-generated video scripts</option>
-                                <option value="templates">Social media-ready templates</option>
-                                <option value="journaling">Private journaling with AI feedback</option>
-                                <option value="other">Other (please specify)</option>
-                              </select>
-                              <textarea name="other-feature" placeholder="If other, please specify"></textarea>
-                          
-                              <label for="willingness">How much would you pay for a tool that saves you time and helps you stay consistent?</label>
-                              <select id="willingness" name="willingness">
-                                <option value="0">Nothing</option>
-                                <option value="5-10">$5-$10/month</option>
-                                <option value="11-20">$11-$20/month</option>
-                                <option value="21-50">$21-$50/month</option>
-                                <option value="50+">$50+/month</option>
-                              </select>
+                    <label for="willingness">How much would you pay for a tool that saves time and keeps your content consistent?</label>
+                        <select id="willingness" name="willingness" required>
+                            <option value="0">Nothing</option>
+                            <option value="5-10">$5-$10/month</option>
+                            <option value="11-20">$11-$20/month</option>
+                            <option value="21-50">$21-$50/month</option>
+                            <option value="50+">$50+/month</option>
+                        </select>
                 </fieldset>      
                 <fieldset>      
-                    <legend>Opt in for the newsletter, receive the invitation to join our Beta, etc. </legend>
-                    <label for="name">Something Here:</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        required
-                        aria-required="true">
-                </fieldset>   
-                    <p>Something here to let them know what will happen after hitting submit.</p>  
+                    <legend>Stay Connected </legend>
+                    
+                    <label for="receive-updates">
+                        Would you like to receive updates about Project Stori, including sneak peeks and early access opportunities?
+                      </label>
+                      <select id="receive-updates" name="receive-updates" required>
+                        <option value="" disabled selected>Choose an option</option>
+                        <option value="yes">Yes, sign me up for the Project Stori newsletter.</option>
+                        <option value="no">No, thank you.</option>
+                      </select>
+
+                      <label for="beta-testing">
+                        Would you be keen to join our beta testing program when Project Stori tool is ready?
+                      </label>
+                      <select id="beta-testing" name="beta-testing" required>
+                        <option value="" disabled selected>Choose an option</option>
+                        <option value="yes">Yes, send me an invite when it's time to test!</option>
+                        <option value="no">No, thank you. </option>
+                      </select>
+
+                </fieldset>     
+                    
+                <p>Submit your feedback to join our waitlist, and you'll be notified when the Project Stori app is ready to launch!</p>
                     <button type="submit">Join the Waitlist</button>
             </form>
 

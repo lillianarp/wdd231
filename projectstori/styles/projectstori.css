@@ -221,7 +221,7 @@ article h1 {
     min-width: 500px;
     width: 60%;
     text-align: center;
-    filter: drop-shadow(#010101 0.3rem 0.3rem 8px); 
+    filter: drop-shadow(0.3rem 0.3rem 8px #010101); 
 }
 
 .cta-btn {

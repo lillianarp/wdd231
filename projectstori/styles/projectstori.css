@@ -369,12 +369,11 @@ label {
     font-weight: bold;
 }
 
-input:required + label::after,
-select:required + label::after {
-    content: " *";
-    color: #E8816E;
-}
-
+label:has(+ input:required):after,
+label:has(+ select:required):after {
+    content: ' *';
+    color: red;
+  }
 
 input, textarea, button {
     width: 100%;
@@ -466,11 +465,15 @@ button[type="submit"]:hover {
 
 /* SIDEBAR on FEEDBACK PAGE */
 #feedback-sidebar {
-    border: 1px dotted #E8816E;
-    padding: 1.5rem;
-    border-radius: 4px;
+    
 }
 
+.sidebar-block {
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
 
 /* FEATURES Page Styling */
 

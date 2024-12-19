@@ -56,11 +56,11 @@
                 <fieldset>
                     <legend>Your Details</legend>
                     <!-- full name -->
-                    <label for="name">Full Name:</label>
+                    <label for="full-name">Full Name:</label>
                     <input 
                         type="text" 
-                        id="name" 
-                        name="name" 
+                        id="full-name" 
+                        name="full-name" 
                         autocomplete="name"
                         required
                         aria-required="true">
@@ -91,11 +91,12 @@
 
                 <fieldset>
                     <legend>Your Project Stori Feedback</legend>
-                    <label for="value">What Project Stori feature would you find most useful?</label>
-                        <select id="value" name="value" required>
+                    <label for="useful">What Project Stori feature would you find most useful?</label>
+                        <select id="useful" name="useful" required>
                             <option value="journaling">The AI can help me express my complex thoughts</option>
-                            <option value="strategy">I can set it to follow my own content strategy</option>
+                            <option value="strategy">I can set up the tool to follow my own content strategy</option>
                             <option value="ai-scripts">The AI can generate video scripts for me</option>
+                            <option value="voiceovers">I don't have to use another tool to record my voiceovers</option>
                             <option value="converting">It can automatically convert my journal entries into video</option>
                             <option value="integration">It easily integrates with social media platforms</option>
                             <option value="other">Other (please specify)</option>
@@ -103,9 +104,9 @@
                     <textarea name="other-feature" placeholder="If other, please specify"></textarea> 
 
                     <label for="suggestions">What is something else you'd like this tool to do?</label>
-                        <textarea id="challenges" name="suggestions" placeholder="Your answer"></textarea>
+                        <textarea id="suggestions" name="suggestions" placeholder="Your answer"></textarea>
                           
-                    <label for="willingness">How much would you pay for a tool that saves time and keeps your content consistent?</label>
+                    <label for="willingness">How much would you pay for a journalling and content-creation tool like this that saves time helps you stay consistent?</label>
                         <select id="willingness" name="willingness" required>
                             <option value="0">Nothing</option>
                             <option value="5-10">$5-$10/month</option>
@@ -142,22 +143,17 @@
             </form>
 
             <div id="feedback-sidebar">
-                <h4>Join the Inner Circle</h4>
+                <div class="sidebar-block">
+                    <h4>The Project Story Waitlist</h4>
 
-                <p>By completing this form, you’ll qualify to receive an invitation to join our Inner Circle—the exclusive group of 100 beta testers who will get early access to Project Stori.</p>
+                    <p>When you submit this form, you're not just providing us with valuable feedback, you're joining our waitlist, which means we'll notify you when the Project Stori app is just about ready to launch. 
+                </div>
 
-                <p>Here’s what’s in it for you:</p>
-
-                <ul>
-                    <li>Beta Tester Perks: Be among the first to try Project Stori.</li>
-                    <li>Exclusive Discounts: $1 for your first year after completing the beta, plus 50% off annual subscriptions for life.</li>
-                </ul>
-
-                <p><em>Once you receive your invitation, act fast—only 100 spots are available in the Inner Circle!</em></p>
-
-                <p>To qualify, you’ll need to accept your beta invitation when it arrives and complete a short feedback exercise during the testing phase.</p>
-
-                <p>This is your chance to shape the future of content creation—join us and make an impact!</p>
+                <div class="sidebar-block">
+                    <h4>Join Our Inner Circle</h4>
+                    <p>If you'd like to be one of our Project Stori beta testers, please indicate so in the form and we'll consider you for our <strong>Inner Circle</strong> - the exclusive group of 100 beta testers who will get early access to Project Stori plus some pretty great treats. </p>
+                    <p>Then, keep an eye on your inbox! We'll send you a special invite if you've made it into the Circle.   </p>
+                   
             </div>
 
         </section>

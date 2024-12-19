@@ -565,7 +565,6 @@ button.close-modal:hover {
     padding: 1rem;
 }
 
-/* Modal Buttons Container */
 #modal-buttons {
     display: flex;
     justify-content: center;
@@ -583,13 +582,19 @@ button {
     transition: background-color 0.3s ease;
 }
 
+#wing-it-btn {
+    outline: 1px dotted red;
+}
+
 #modal-buttons button:first-child {
-    background-color: #ddd;
-    color: #333;
+    background-color: #ffffff;
+    color: #272727;
+    font-weight: 600;
 }
 
 #modal-buttons button:first-child:hover {
-    background-color: #ccc;
+    background-color: #eeeded;
+    color: #272727;
 }
 
 button.record-btn, #modal-buttons button:last-child {

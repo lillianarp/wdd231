@@ -1,5 +1,10 @@
-// toggle the hamburger
+import { populateFormSummary } from './populateSummary.mjs';
+
+// Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+    populateFormSummary();
+
+    // toggle the hamburger menu
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('nav');
 
@@ -20,16 +25,41 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("Hamburger menu not found. Where is it?");
     }
+
+    // listen for form submission
+    const form = document.querySelector(".feedback-form");
+
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const formData = {};
+            const formElements = form.elements;
+
+            for (let element of formElements) {
+                if (element.name && element.value) {
+                    formData[element.name] = element.value;
+                }
+            }
+
+            // add timestamp
+            formData.timestamp = new Date().toLocaleString();
+
+            // store in localStorage
+            localStorage.setItem("feedbackData", JSON.stringify(formData));
+
+            // redirect to thankyou.html
+            window.location.href = "thankyou.html";
+        });
+    }
 });
 
-hamburger.addEventListener('click', () => {
-    console.log("Hamburger clicked!"); // Check if this logs to the console
-    nav.classList.toggle('open');
-});
 
+
+// Simulate Jake's journal 
 let entries = [];
 
-// Grab Data from the JSON File - Journal Entries
+// grab Data from the JSON File - Journal Entries
 document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("entries-container");
     if (container) {
@@ -129,11 +159,16 @@ document.addEventListener("click", (event) => {
 });
 
 // also close modal by clicking outside the modal-content
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.close();
-    }
-});
+if (modal) {
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.close();
+        }
+    });
+} else {
+    console.warn("No modal found on this page. Skipping modal logic.");
+}
+
 
 
 // FOOTER: Year & Last Modified Date

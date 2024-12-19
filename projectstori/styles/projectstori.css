@@ -397,56 +397,6 @@ select option:disabled {
     background-color: #474747; 
 }
 
-#features {
-    display: grid;
-    grid-template-columns: 20px auto; 
-    gap: 1rem 0.5rem; 
-    /* outline: 1px dotted red; */
-    margin: 1rem 2rem;
-}
-
-.feature-option {
-    display: contents; 
-}
-
-.feature-option input[type="checkbox"] {
-    justify-self: start; 
-    margin-top: 0.2rem; 
-}
-
-.feature-option label {
-    align-self: center; 
-    font-weight: 400;
-}
-
-/* Opt-in alignment */
-.opt-in {
-    display: grid;
-    grid-template-columns: 20px auto; 
-    gap: 0.5rem; 
-    align-items: center; 
-  }
-  
-  .opt-in input[type="checkbox"] {
-    justify-self: start; 
-    margin-top: 0.1rem; 
-  }
-  
-  .opt-in label {
-    align-self: center; 
-    line-height: 1.4; 
-  }
-
-textarea {
-    grid-column: span 2; /* textarea spans both columns */
-    margin-top: 0.5rem;
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-/* add STYLEs for REQUIRED fields here  */
-
 
 button[type="submit"] {
     background-color: #E8816E;
@@ -463,10 +413,13 @@ button[type="submit"]:hover {
     color: #FEFCFD;
 }
 
-/* SIDEBAR on FEEDBACK PAGE */
-#feedback-sidebar {
-    
+#form-summary {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 1.5rem;
 }
+
+/* SIDEBAR on FEEDBACK PAGE */
 
 .sidebar-block {
     padding: 1.5rem;

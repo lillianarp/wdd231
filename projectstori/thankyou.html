@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/projectstori.css"> 
     <script type="module" defer src="scripts/projectstori.js"></script>
+    <script type="module" defer src="scripts/populateSummary.mjs"></script>
 </head>
 
 <body id="thankyou">
@@ -48,7 +49,13 @@
     </header>
 
     <main>
-        Thank You Very Much. 
+        <h1>Success!</h1>
+        <p>Thank you for sharing your valuable thoughts and suggestions with us - and for joining the <strong>Project Stori Waitlist</strong>!</p>
+        <p>Here's a summary of what you submitted:</p>
+
+        <div id="form-summary">
+            <!-- dynamically populated -->
+        </div>
     </main>
 
     <footer>

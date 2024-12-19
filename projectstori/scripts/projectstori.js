@@ -2,7 +2,9 @@ import { populateFormSummary } from './populateSummary.mjs';
 
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    populateFormSummary();
+    if (document.getElementById("form-summary")) {
+        populateFormSummary();
+    }
 
     // toggle the hamburger menu
     const hamburger = document.getElementById('hamburger');
@@ -11,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('open');
+            console.log("Menu toggled:", nav.classList.contains("open"));
         });
 
         // close the menu by clicking away from it
@@ -21,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!isClickInNav && !isClickOnHamburger) {
                 nav.classList.remove('open');
             }
+        });
+        nav.addEventListener('click', (event) => {
+            event.stopPropagation(); // prevent click bubbling 
         });
     } else {
         console.error("Hamburger menu not found. Where is it?");

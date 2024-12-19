@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: "Noto Sans Mono", monospace;
+    font-family: "Noto Sans Mono", 'Ubuntu', monospace, sans-serif;
     color: #010101;
     background-color: #fefcfd;
     line-height: 1.6;
@@ -136,6 +136,10 @@ nav {
     padding: 0;
     box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.1);
     border-radius: 4px;
+    outline: 1px dotted yellow;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 nav.open {
@@ -149,27 +153,27 @@ nav ul {
     list-style: none;
     gap: 0;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    padding: 1rem 0;
+    padding: 0;
     margin: 0;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
     width: 100%;
-    
 }
 
 nav ul li a{
     display: block;
-    width: 100%;
     padding: 0.4rem 0;
     color: #FEFCFD;
     text-align: center;
     text-decoration: none;
+    width: 100%;
 }
 
 nav ul li:hover {
@@ -689,15 +693,17 @@ footer {
         flex-direction: row;
         gap: 1rem;
         justify-content: space-around;
+        outline: 1px dotted red;
     }
 
     nav ul li {
-        /* outline: 1px dotted red; */
+        outline: 1px dotted red;
         padding: 0;
     }
 
     nav ul li a {
         color: #010101;
+        outline: 1px dotted red;
     }
     
     nav ul li:hover {
@@ -709,6 +715,7 @@ footer {
         margin: 0 0.5em;
         text-decoration: none;
         transition: text-shadow 0.3s ease, color 0.3s ease;
+        outline: 1px dotted red;
     }
     
     nav a:hover,

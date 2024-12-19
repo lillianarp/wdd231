@@ -136,7 +136,6 @@ nav {
     padding: 0;
     box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.1);
     border-radius: 4px;
-    outline: 1px dotted yellow;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -693,17 +692,14 @@ footer {
         flex-direction: row;
         gap: 1rem;
         justify-content: space-around;
-        outline: 1px dotted red;
     }
 
     nav ul li {
-        outline: 1px dotted red;
         padding: 0;
     }
 
     nav ul li a {
         color: #010101;
-        outline: 1px dotted red;
     }
     
     nav ul li:hover {
@@ -715,7 +711,6 @@ footer {
         margin: 0 0.5em;
         text-decoration: none;
         transition: text-shadow 0.3s ease, color 0.3s ease;
-        outline: 1px dotted red;
     }
     
     nav a:hover,
@@ -779,7 +774,7 @@ footer {
         background-color: transparent;
         box-shadow: none;
         padding: 0;
-        /* outline: 1px dotted red; */
+
     }
 
     nav ul {
@@ -789,7 +784,6 @@ footer {
     }
 
     nav ul li {
-        /* outline: 1px dotted red; */
         padding: 0;
     }
 

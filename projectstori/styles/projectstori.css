@@ -21,7 +21,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 h1 { font-size: 2rem; } /* Mobile-first heading sizes */
@@ -187,42 +187,39 @@ nav a:hover {
 
 #hero {
     position: relative;
-    z-index: 1;
     margin: 0;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
+    background-image: url("../images/hero_1300x800.webp");
     overflow: hidden;
-}
-
-picture img {
-    display: block;
-    width: 100%;
-    height: 100%; 
-    margin: 0 auto;
-    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 article {
-    position: absolute;
-    top:10%;
-    left: 10%;
-    /* transform: translateY(-30%, -30%); */
-    width: 90%;
-    height: auto;
-    max-width: 400px;
-    padding: 1rem;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-    z-index: 2;
-    font-size: 1.1rem;
-    box-sizing: border-box;
+    width: 100%;
+    margin-top: 12%;
+}
+
+article p {
+    font-size: 1.5rem;
+    max-width: 500px;
+    margin: 1rem auto;
+    padding: 0 1rem;
 }
 
 article h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    margin: 1rem auto;
+    min-width: 500px;
+    width: 60%;
+    text-align: center;
+    filter: drop-shadow(#010101 0.3rem 0.3rem 8px); 
 }
 
 .cta-btn {
@@ -264,8 +261,7 @@ article h1 {
   
   /* Style for the CTA blurb */
   .cta-blurb {
-    display: inline-block; 
-    max-width: 90%;
+    max-width: 95%;
     padding: 1.5rem;
     margin: 1rem auto 2rem auto;
     border: 2px solid #333; 
@@ -299,7 +295,11 @@ main {
 
 .main-content img {
     display: block;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 95%;
+    height: auto;
 }
 
 .main-content table {
@@ -623,7 +623,7 @@ dialog::backdrop {
 footer {
     background-color: #1D6053;
     color: #FEFCFD;
-    padding: 2rem 0;
+    padding: 2rem 1.5rem;
     text-align: center;
 }
 
@@ -677,6 +677,11 @@ footer {
         display: none;
     }
     /* Styles for tablet view */
+
+    /* article {
+        top: 50%;
+        left: 50%;
+    } */
 
     #entries-container {
         grid-template-columns: repeat(2, 1fr); 
@@ -753,18 +758,7 @@ footer {
         text-shadow: 0px 0px 8px rgba(232, 129, 110, 0.8);
     }
 
-    article {
-        top: 20%;
-        left: 20%;
-        max-width: 60%;
-        transform: translateY(-2rem);
-    }
     
-    .cta-btn {
-        font-size: 1.3rem;
-        font-weight: 600;
-    }
-
 
     /* FEATURE PAGE Styles */
     #entries-container {

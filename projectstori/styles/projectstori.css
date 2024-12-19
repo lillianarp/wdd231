@@ -87,10 +87,12 @@ ol li {
 
 ul {
     margin: 0.5rem 2rem;
+    width: 80%;
 }
 
 ul li {
-    margin: 0.5rem 2rem;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 /* Header Styles */

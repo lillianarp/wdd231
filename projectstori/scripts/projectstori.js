@@ -85,7 +85,7 @@ function displayJournalEntries(entries, container) {
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridItem.innerHTML = `
-            <img src="${entry.preview}" alt="${entry.title}" width="300" height="200">
+            <img src="${entry.preview}" alt="${entry.title}" width="300" height="200" loading="lazy">
             <h3>${entry.title}</h3>
             <p>${entry.hashtags.map(tag => `${tag}`).join(" ")}</p>
             <p>${entry.excerpt}</p>

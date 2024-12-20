@@ -45,7 +45,7 @@ header {
 #header-content {
     display: flex;
     justify-content: space-between;
-    /* outline: 1px dotted red; */
+    outline: 1px dotted red;
 }
 
 .site-info {
